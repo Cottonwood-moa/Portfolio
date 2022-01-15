@@ -1,0 +1,13 @@
+.portfolio {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.portfolioContainer {
+  position: absolute;
+  background-color: wheat;
+  /* 임시 높이 */
+  height: 1100px;
+}

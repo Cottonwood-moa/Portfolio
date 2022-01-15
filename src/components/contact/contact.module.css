@@ -1,0 +1,13 @@
+.contact {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.contactContainer {
+  position: absolute;
+  background-color: rgb(51, 253, 0);
+  /* 임시 높이 */
+  height: 1100px;
+}

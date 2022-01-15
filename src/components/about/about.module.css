@@ -1,0 +1,13 @@
+.about {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.aboutContainer {
+  position: absolute;
+  background-color: rgb(130, 159, 238);
+  /* 임시 높이 */
+  height: 1100px;
+}

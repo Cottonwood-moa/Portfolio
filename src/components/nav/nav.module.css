@@ -1,0 +1,28 @@
+@value basicTheme,basicText,chosenText from "../../common/colors.css";
+
+.container {
+  position: absolute;
+  width: 100%;
+}
+.hamburger {
+  position: absolute;
+  z-index: 2;
+  color: basicText;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  z-index: 2;
+}
+.navInfo {
+  z-index: 1;
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: pink;
+  right: 0;
+}

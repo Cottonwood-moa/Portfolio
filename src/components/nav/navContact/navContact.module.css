@@ -1,0 +1,73 @@
+@value buttonBottom,basicTheme,basicText,chosenText from "../../../common/colors.css";
+.navElement {
+  width: 100%;
+  height: 25%;
+  color: basicText;
+  position: relative;
+  text-align: center;
+}
+.navButton {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  font-weight: bold;
+  background-color: basicTheme;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.text {
+  z-index: 1;
+}
+.navButton::before {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.navButton:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navButton::before {
+  content: " ";
+  width: 100%;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: rgb(168, 168, 168);
+  opacity: 0.1;
+  transition: transform 0.4s ease;
+}
+
+.navButton::after {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.navButton:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.navButton::after {
+  content: " ";
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: buttonBottom;
+  opacity: 0.1;
+  transition: transform 0.4s ease;
+  transition-delay: 0.1s;
+}

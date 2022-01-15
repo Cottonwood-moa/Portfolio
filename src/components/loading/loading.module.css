@@ -1,0 +1,22 @@
+@value basicTheme from "../../common/colors.css";
+.loadingContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: basicTheme;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progressBar {
+  position: absolute;
+}
+.loadingImage {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url(https://media3.giphy.com/media/S5uMJDmtnATLbjjw3h/giphy.gif?cid=790b7611c2e10be0726c1eabed46e19604949f0751d57767&rid=giphy.gif&ct=g)
+    no-repeat center center;
+  background-size: 101% 101%;
+}
