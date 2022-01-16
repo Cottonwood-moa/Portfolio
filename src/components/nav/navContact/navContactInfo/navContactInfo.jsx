@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./navContactInfo.module.css";
+import styles from "./navContactInfo.module.scss";
 const NavContactInfo = (props) => {
   return (
     <div className={styles.navInfo}>

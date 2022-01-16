@@ -1,8 +1,9 @@
+@import "../../../../common/main.scss";
 .navInfo {
   z-index: 1;
   position: absolute;
   width: 50%;
   height: 100vh;
-  background-color: red;
+  background-color: $chosenText;
   right: 0;
 }

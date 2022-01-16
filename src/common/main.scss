@@ -1,0 +1,59 @@
+$basicTheme: #2a2a2a;
+$basicText: #5a5a5a;
+$chosenText: #9f9f9f;
+$basicPink: pink;
+$buttonBottom: black;
+$buttonTop: rgb(168, 168, 168);
+$testColor: white;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes scale-easeInBounce {
+  0% {
+    transform: scale(0);
+  }
+
+  4% {
+    transform: scale(0.11);
+  }
+
+  8% {
+    transform: scale(0.44);
+  }
+
+  18% {
+    transform: scale(0.98);
+  }
+
+  26% {
+    transform: scale(0.75);
+  }
+
+  46% {
+    transform: scale(0.98);
+  }
+
+  64% {
+    transform: scale(0.94);
+  }
+
+  76% {
+    transform: scale(0.99);
+  }
+
+  88% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

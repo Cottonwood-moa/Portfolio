@@ -1,4 +1,4 @@
-@value basicTheme,basicText,chosenText from "../../common/colors.css";
+@import "../../common/main.scss";
 
 .container {
   position: absolute;
@@ -7,10 +7,12 @@
 .hamburger {
   position: absolute;
   z-index: 2;
-  color: basicText;
+  color: $basicText;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  padding-right: 2rem;
+  padding-top: 2rem;
 }
 .nav {
   position: absolute;
@@ -20,9 +22,4 @@
 }
 .navInfo {
   z-index: 1;
-  position: absolute;
-  width: 50%;
-  height: 100vh;
-  background-color: pink;
-  right: 0;
 }

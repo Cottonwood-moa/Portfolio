@@ -1,12 +1,13 @@
-@value basicTheme from "../../common/colors.css";
+@import "../../common/main.scss";
 .loadingContainer {
-  position: relative;
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: basicTheme;
+  background-color: $basicTheme;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
 }
 .progressBar {
   position: absolute;

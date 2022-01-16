@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "./contact.module.scss";
+import styles from "./labs.module.scss";
 import Nav from "../nav/nav";
 import Loading from "../loading/loading";
 import { Container } from "react-bootstrap";
-const Contact = (props) => {
+const Labs = (props) => {
   const [loading, setLoading] = useState(true);
-
   return (
     <>
       <Loading loading={loading} setLoading={setLoading} />
@@ -13,11 +12,11 @@ const Contact = (props) => {
       {loading || <Nav />}
       {loading || (
         <Container>
-          <div className={styles.contactContainer}>contact</div>
+          <div className={styles.labsContainer}>Labs</div>
         </Container>
       )}
     </>
   );
 };
 
-export default Contact;
+export default Labs;

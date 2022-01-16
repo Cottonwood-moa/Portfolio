@@ -1,0 +1,33 @@
+@import "../../../common/main.scss";
+.navInfo {
+  z-index: 1;
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  background-color: $chosenText;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.spinningEarth {
+  width: 200px;
+  height: 200px;
+  background: url(https://media1.giphy.com/media/usoe2XTnnQqmHfIleu/giphy.gif?cid=ecf05e47g0oown01qph2t8x66gy52aul7zac7numomseehg1&rid=giphy.gif&ct=s)
+    no-repeat center center;
+  background-size: 101% 101%;
+  margin-bottom: 5rem;
+}
+.typing {
+  font-size: 48px;
+  font-weight: bold;
+  color: $basicText;
+  border-right: 0.1em solid $basicText;
+  width: 11ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(11, end),
+    blink-caret 0.5s step-end infinite alternate;
+}

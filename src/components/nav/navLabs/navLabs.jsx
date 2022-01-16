@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./navAbout.module.css";
-const NavAbout = ({ navigate, setAboutInfo }) => {
+import styles from "./navLabs.module.scss";
+const NavLabs = ({ navigate, setLabsInfo }) => {
   const mouseOverEvent = () => {
-    setAboutInfo(true);
+    setLabsInfo(true);
   };
   const mouseOutEvent = () => {
-    setAboutInfo(false);
+    setLabsInfo(false);
   };
   return (
     <>
@@ -19,14 +19,14 @@ const NavAbout = ({ navigate, setAboutInfo }) => {
         <div
           className={styles.navButton}
           onClick={() => {
-            navigate("/about");
+            navigate("/labs");
           }}
         >
-          <p className={styles.text}>About</p>
+          <p className={styles.text}>Labs</p>
         </div>
       </div>
     </>
   );
 };
 
-export default NavAbout;
+export default NavLabs;

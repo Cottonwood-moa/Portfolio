@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./navPortfolio.module.css";
+import styles from "./navPortfolio.module.scss";
 const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
   const mouseOverEvent = () => {
     setPortfolioInfo(true);

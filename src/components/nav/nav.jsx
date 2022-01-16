@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./nav.module.css";
+import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import NavIntro from "./navIntro/navIntro";
 import NavIntroInfo from "./navIntro/navIntroInfo/navIntroInfo";
-import NavAbout from "./navAbout/navAbout";
-import NavAboutInfo from "./navAbout/navAboutInfo/navAboutInfo";
+import NavLabs from "./navLabs/navLabs";
+import NavLabsInfo from "./navLabs/navLabsInfo/navLabsInfo";
 import NavPortfolio from "./navPortfolio/navPortfolio";
 import NavPortfolioInfo from "./navPortfolio/navPortfolioInfo/navPortfolioInfo";
 import NavContact from "./navContact/navContact";
 import NavContactInfo from "./navContact/navContactInfo/navContactInfo";
+import NavInfo from "./navInfo/navInfo";
 const Nav = (props) => {
   const navigate = new useNavigate();
   const [isOpen, setOpen] = useState(false);
   const [introInfo, setIntroInfo] = useState(false);
-  const [aboutInfo, setAboutInfo] = useState(false);
+  const [labsInfo, setLabsInfo] = useState(false);
   const [portfolioInfo, setPortfolioInfo] = useState(false);
   const [contactInfo, setContactInfo] = useState(false);
   return (
@@ -25,7 +26,7 @@ const Nav = (props) => {
       {isOpen && (
         <div className={styles.nav}>
           <NavIntro navigate={navigate} setIntroInfo={setIntroInfo} />
-          <NavAbout navigate={navigate} setAboutInfo={setAboutInfo} />
+          <NavLabs navigate={navigate} setLabsInfo={setLabsInfo} />
           <NavPortfolio
             navigate={navigate}
             setPortfolioInfo={setPortfolioInfo}
@@ -33,21 +34,15 @@ const Nav = (props) => {
           <NavContact navigate={navigate} setContactInfo={setContactInfo} />
         </div>
       )}
-      {isOpen && (
-        <div
-          className={styles.navInfo}
-          data-aos="fade-right"
-          data-aos-delay="400"
-        ></div>
-      )}
+      {isOpen && <NavInfo />}
       {introInfo && isOpen && (
         <>
           <NavIntroInfo />
         </>
       )}
-      {aboutInfo && isOpen && (
+      {labsInfo && isOpen && (
         <>
-          <NavAboutInfo />
+          <NavLabsInfo />
         </>
       )}
       {portfolioInfo && isOpen && (

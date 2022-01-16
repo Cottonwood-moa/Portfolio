@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./navIntro.module.css";
+import styles from "./navIntro.module.scss";
 const NavIntro = ({ navigate, setIntroInfo }) => {
   const mouseOverEvent = () => {
     setIntroInfo(true);

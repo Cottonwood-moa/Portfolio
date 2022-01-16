@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./navContact.module.css";
+import styles from "./navContact.module.scss";
 const NavContact = ({ navigate, setContactInfo }) => {
   const mouseOverEvent = () => {
     setContactInfo(true);
