@@ -1,5 +1,133 @@
+@import "../../common/main.scss";
 .introContainer {
-  background-color: rgb(130, 159, 238);
-  /* 임시 */
-  height: 1100px;
+  background-color: $background;
+  overflow-y: scroll;
+  height: 100vh;
+  max-height: 100vh;
+}
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  color: $basicText;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: 1em;
+}
+.textElement1 {
+  transform: translateX(10em) translateY(10em) rotate(180deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 0.8s;
+}
+.textElement2 {
+  transform: translateX(6em) translateY(-1em) rotate(90deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 0.9s;
+}
+.textElement3 {
+  transform: translateX(-8em) translateY(8em) rotate(45deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 1s;
+}
+.textElement4 {
+  transform: translateX(-5em) translateY(3em) rotate(-180deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 0.7s;
+}
+.textElement5 {
+  transform: translateX(3em) translateY(3em) rotate(-90deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 0.6s;
+}
+.textElement6 {
+  transform: translateX(5em) translateY(2em) rotate(-45deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 1.1s;
+}
+.textElement7 {
+  transform: translateX(-10em) translateY(+10em) rotate(180deg);
+  opacity: 0;
+  animation: textMove 0.4s forwards 1s;
+}
+
+.image {
+  width: 20em;
+  height: 20em;
+  background-color: white;
+  border-radius: 50%;
+  margin: 3em;
+}
+
+.info {
+  color: $basicText;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.link {
+  background-color: $basicTheme;
+  padding-left: 1px;
+  padding-right: 1px;
+  position: relative;
+  cursor: pointer;
+}
+.link::before {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.link::before {
+  content: " ";
+  width: 100%;
+  height: 50%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background: white;
+  opacity: 0.1;
+  transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+  cursor: pointer;
+}
+
+.link::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  cursor: pointer;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.link::after {
+  content: " ";
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: white;
+  opacity: 0.1;
+  transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+  transition-delay: 0.1s;
 }

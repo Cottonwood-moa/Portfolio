@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import NavIntro from "./navIntro/navIntro";
@@ -18,43 +18,54 @@ const Nav = (props) => {
   const [labsInfo, setLabsInfo] = useState(false);
   const [portfolioInfo, setPortfolioInfo] = useState(false);
   const [contactInfo, setContactInfo] = useState(false);
+  const navRef = useRef();
+  const infoRef = useRef();
+  useEffect(() => {
+    if (isOpen) {
+      navRef.current.style.transform = "translateX(0)";
+      infoRef.current.style.transform = "translateX(0)";
+    }
+    if (!isOpen) {
+      navRef.current.style.transform = "translateX(-50vw)";
+      infoRef.current.style.transform = "translateX(50vw)";
+    }
+  }, [isOpen]);
   return (
     <div className={styles.container}>
       <div className={styles.hamburger}>
         <Hamburger toggled={isOpen} toggle={setOpen} size={48} />
       </div>
-      {isOpen && (
-        <div className={styles.nav}>
-          <NavIntro navigate={navigate} setIntroInfo={setIntroInfo} />
-          <NavLabs navigate={navigate} setLabsInfo={setLabsInfo} />
-          <NavPortfolio
-            navigate={navigate}
-            setPortfolioInfo={setPortfolioInfo}
-          />
-          <NavContact navigate={navigate} setContactInfo={setContactInfo} />
-        </div>
-      )}
-      {isOpen && <NavInfo />}
-      {introInfo && isOpen && (
-        <>
-          <NavIntroInfo />
-        </>
-      )}
-      {labsInfo && isOpen && (
-        <>
-          <NavLabsInfo />
-        </>
-      )}
-      {portfolioInfo && isOpen && (
-        <>
-          <NavPortfolioInfo />
-        </>
-      )}
-      {contactInfo && isOpen && (
-        <>
-          <NavContactInfo />
-        </>
-      )}
+
+      <div className={styles.nav} ref={navRef}>
+        <NavIntro navigate={navigate} setIntroInfo={setIntroInfo} />
+        <NavLabs navigate={navigate} setLabsInfo={setLabsInfo} />
+        <NavPortfolio navigate={navigate} setPortfolioInfo={setPortfolioInfo} />
+        <NavContact navigate={navigate} setContactInfo={setContactInfo} />
+      </div>
+
+      <div className={styles.navInfo} ref={infoRef}>
+        <NavInfo isOpen={isOpen} />
+        {introInfo && isOpen && (
+          <>
+            <NavIntroInfo />
+          </>
+        )}
+        {labsInfo && isOpen && (
+          <>
+            <NavLabsInfo labsInfo={labsInfo} />
+          </>
+        )}
+        {portfolioInfo && isOpen && (
+          <>
+            <NavPortfolioInfo />
+          </>
+        )}
+        {contactInfo && isOpen && (
+          <>
+            <NavContactInfo />
+          </>
+        )}
+      </div>
     </div>
   );
 };

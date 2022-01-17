@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./navIntro.module.scss";
 const NavIntro = ({ navigate, setIntroInfo }) => {
   const mouseOverEvent = () => {
@@ -7,11 +8,17 @@ const NavIntro = ({ navigate, setIntroInfo }) => {
   const mouseOutEvent = () => {
     setIntroInfo(false);
   };
+  const location = useLocation();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setActive(true);
+    }
+  }, [active, location.pathname]);
   return (
     <>
       <div
         className={styles.navElement}
-        data-aos="fade-down"
         onMouseOver={() => mouseOverEvent()}
         onMouseOut={() => mouseOutEvent()}
       >
@@ -21,7 +28,7 @@ const NavIntro = ({ navigate, setIntroInfo }) => {
             navigate("/");
           }}
         >
-          <p className={styles.text}>Intro</p>
+          <p className={`${styles.text} ${active && styles.active}`}>Intro</p>
         </div>
       </div>
     </>

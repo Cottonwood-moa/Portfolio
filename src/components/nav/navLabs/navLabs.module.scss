@@ -4,7 +4,7 @@
   height: 25%;
   position: relative;
   text-align: center;
-  color: $basicPink;
+  color: $basicText;
 }
 .navButton {
   position: relative;
@@ -19,9 +19,6 @@
   justify-content: center;
   transition: 0.2s;
   cursor: pointer;
-}
-.text {
-  z-index: 1;
 }
 .navButton::before {
   transform: scaleX(0);
@@ -71,4 +68,7 @@
   opacity: 0.1;
   transition: transform 0.4s ease;
   transition-delay: 0.1s;
+}
+.text.active {
+  color: $basicPink;
 }

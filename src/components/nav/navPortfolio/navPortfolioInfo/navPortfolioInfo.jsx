@@ -38,11 +38,7 @@ const NavPortfolioInfo = (props) => {
         ></div>
       </div>
       <div className={styles.info}>
-        <div>
-          From Web Components and UI/UX animations to React.JS, Vue.JS, VueX,
-          JQeury.
-        </div>
-        <div>
+        <div data-aos="zoom-in" data-aos-delay="300">
           Check out my latest web software development portfolio projects.
         </div>
       </div>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./navLabs.module.scss";
 const NavLabs = ({ navigate, setLabsInfo }) => {
   const mouseOverEvent = () => {
@@ -7,12 +8,17 @@ const NavLabs = ({ navigate, setLabsInfo }) => {
   const mouseOutEvent = () => {
     setLabsInfo(false);
   };
+  const location = useLocation();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/labs") {
+      setActive(true);
+    }
+  }, [active, location.pathname]);
   return (
     <>
       <div
         className={styles.navElement}
-        data-aos="fade-down"
-        data-aos-delay="100"
         onMouseOver={() => mouseOverEvent()}
         onMouseOut={() => mouseOutEvent()}
       >
@@ -22,7 +28,7 @@ const NavLabs = ({ navigate, setLabsInfo }) => {
             navigate("/labs");
           }}
         >
-          <p className={styles.text}>Labs</p>
+          <p className={`${styles.text} ${active && styles.active}`}>Labs</p>
         </div>
       </div>
     </>

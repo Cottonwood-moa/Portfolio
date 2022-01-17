@@ -9,7 +9,7 @@ const Loading = ({ loading, setLoading }) => {
       let interval = setInterval(() => {
         setPercentage((prev) => {
           if (percentage < 90) {
-            return prev + Math.floor(Math.random() * 10);
+            return prev + Math.floor(Math.random() * 10 - 5 + 1) + 5;
           }
           if (percentage >= 90) {
             return prev + 1;

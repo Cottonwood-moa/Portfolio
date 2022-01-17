@@ -5,6 +5,7 @@ $basicPink: pink;
 $buttonBottom: black;
 $buttonTop: rgb(168, 168, 168);
 $testColor: white;
+$background: #1f1f1f;
 @keyframes typing {
   from {
     width: 0;
@@ -55,5 +56,14 @@ $testColor: white;
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes textMove {
+  0% {
+  }
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+    opacity: 1;
   }
 }

@@ -1,0 +1,19 @@
+@import "../../../common/main.scss";
+.tagContainer {
+  perspective: 1000px;
+}
+.tagText {
+  color: $basicText;
+  font-weight: bold;
+  border-radius: 10%;
+  background-color: $chosenText;
+  padding: 3px 3px 2px 2px;
+  border-top: 2px solid rgb(77, 77, 77);
+  border-left: 2px solid rgb(77, 77, 77);
+  border-bottom: 3px solid rgb(77, 77, 77);
+  border-right: 3px solid rgb(77, 77, 77);
+  margin: 1em 2px;
+  transform: rotateY(180deg);
+  transition-duration: 0.8s;
+  backface-visibility: hidden;
+}

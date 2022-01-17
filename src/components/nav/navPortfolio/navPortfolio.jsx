@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./navPortfolio.module.scss";
 const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
   const mouseOverEvent = () => {
@@ -7,12 +8,17 @@ const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
   const mouseOutEvent = () => {
     setPortfolioInfo(false);
   };
+  const location = useLocation();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (location.pathname === "/portfolio") {
+      setActive(true);
+    }
+  }, [active, location.pathname]);
   return (
     <>
       <div
         className={styles.navElement}
-        data-aos="fade-down"
-        data-aos-delay="200"
         onMouseOver={() => mouseOverEvent()}
         onMouseOut={() => mouseOutEvent()}
       >
@@ -22,7 +28,9 @@ const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
             navigate("/portfolio");
           }}
         >
-          <p className={styles.text}>Portfolio</p>
+          <p className={`${styles.text} ${active && styles.active}`}>
+            Portfolio
+          </p>
         </div>
       </div>
     </>

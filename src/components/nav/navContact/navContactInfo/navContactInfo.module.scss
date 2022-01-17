@@ -2,8 +2,23 @@
 .navInfo {
   z-index: 1;
   position: absolute;
-  width: 50%;
+  width: 100%;
   height: 100vh;
   background-color: $chosenText;
   right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing {
+  font-size: 48px;
+  font-weight: bold;
+  color: $basicText;
+  border-right: 0.1em solid $basicText;
+  width: 14ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 1s steps(14, end),
+    blink-caret 0.5s step-end infinite alternate;
 }
