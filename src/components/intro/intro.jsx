@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Nav from "../nav/nav";
 import styles from "./intro.module.scss";
 import Loading from "../loading/loading";
