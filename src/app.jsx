@@ -4,7 +4,6 @@ import Intro from "./components/intro/intro";
 import Portfolio from "./components/portfolio/portfolio";
 import Labs from "./components/labs/labs";
 import Contact from "./components/contact/contact";
-import styles from "./app.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..

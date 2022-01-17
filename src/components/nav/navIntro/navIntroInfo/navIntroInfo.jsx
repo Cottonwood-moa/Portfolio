@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./navIntroInfo.module.scss";
 const NavIntroInfo = (props) => {
   const titleRef = useRef();
