@@ -43,7 +43,7 @@ const Contact = ({ submitEmail }) => {
     });
     setTimeout(() => {
       setSendLoading(false);
-    }, 2400);
+    }, 2500);
   };
   // 이름 유효성 검사
   const nameValidation = () => {
