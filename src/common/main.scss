@@ -11,6 +11,11 @@ $background: #1f1f1f;
     width: 0;
   }
 }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
 @keyframes blink-caret {
   50% {
     border-color: transparent;
@@ -74,5 +79,14 @@ $background: #1f1f1f;
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
