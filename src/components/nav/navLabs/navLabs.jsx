@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./navLabs.module.scss";
-const NavLabs = ({ navigate, setLabsInfo }) => {
+const NavLabs = ({ navigate, setLabsInfo, navRef, infoRef, setOpen }) => {
   const mouseOverEvent = () => {
     setLabsInfo(true);
   };
@@ -13,6 +13,8 @@ const NavLabs = ({ navigate, setLabsInfo }) => {
   useEffect(() => {
     if (location.pathname === "/labs") {
       setActive(true);
+    } else {
+      setActive(false);
     }
   }, [active, location.pathname]);
   return (
@@ -25,6 +27,9 @@ const NavLabs = ({ navigate, setLabsInfo }) => {
         <div
           className={styles.navButton}
           onClick={() => {
+            navRef.current.style.transform = "translateX(-50vw)";
+            infoRef.current.style.transform = "translateX(50vw)";
+            setOpen(false);
             navigate("/labs");
           }}
         >

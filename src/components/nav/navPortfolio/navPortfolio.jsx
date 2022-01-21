@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./navPortfolio.module.scss";
-const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
+const NavPortfolio = ({
+  navigate,
+  setPortfolioInfo,
+  navRef,
+  infoRef,
+  setOpen,
+}) => {
   const mouseOverEvent = () => {
     setPortfolioInfo(true);
   };
@@ -13,6 +19,8 @@ const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
   useEffect(() => {
     if (location.pathname === "/portfolio") {
       setActive(true);
+    } else {
+      setActive(false);
     }
   }, [active, location.pathname]);
   return (
@@ -25,6 +33,9 @@ const NavPortfolio = ({ navigate, setPortfolioInfo }) => {
         <div
           className={styles.navButton}
           onClick={() => {
+            navRef.current.style.transform = "translateX(-50vw)";
+            infoRef.current.style.transform = "translateX(50vw)";
+            setOpen(false);
             navigate("/portfolio");
           }}
         >

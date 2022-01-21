@@ -1,8 +1,8 @@
 @import "../../common/main.scss";
 .loadingContainer {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: $basicTheme;
   display: flex;
   justify-content: center;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styles from "./navContact.module.scss";
-const NavContact = ({ navigate, setContactInfo }) => {
+const NavContact = ({ navigate, setContactInfo, navRef, infoRef, setOpen }) => {
   const mouseOverEvent = () => {
     setContactInfo(true);
   };
@@ -13,6 +13,8 @@ const NavContact = ({ navigate, setContactInfo }) => {
   useEffect(() => {
     if (location.pathname === "/contact") {
       setActive(true);
+    } else {
+      setActive(false);
     }
   }, [active, location.pathname]);
   return (
@@ -25,6 +27,9 @@ const NavContact = ({ navigate, setContactInfo }) => {
         <div
           className={styles.navButton}
           onClick={() => {
+            navRef.current.style.transform = "translateX(-50vw)";
+            infoRef.current.style.transform = "translateX(50vw)";
+            setOpen(false);
             navigate("/contact");
           }}
         >

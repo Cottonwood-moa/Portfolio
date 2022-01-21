@@ -6,11 +6,15 @@ $buttonBottom: black;
 $buttonTop: rgb(168, 168, 168);
 $testColor: white;
 $background: #1f1f1f;
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
+
+// break points
+
+$sm: 540px;
+$md: 704px;
+$lg: 924px;
+$xl: 1140px;
+$xxl: 1364px;
+
 @keyframes typing {
   from {
     width: 0;
@@ -88,5 +92,30 @@ $background: #1f1f1f;
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes pageMove {
+  0% {
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progressStart {
+  0% {
+    width: 0%;
+  }
+}
+@keyframes progressEnd {
+  0% {
+    right: 0;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    width: 0%;
   }
 }

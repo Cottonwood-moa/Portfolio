@@ -20,10 +20,10 @@ const Loading = ({ loading, setLoading }) => {
         loadingRef.current.style.transform = "translateY(100vh)";
         let timeout = setTimeout(() => {
           loadingRef.current.style.display = "none";
+          setLoading(false);
           clearTimeout(timeout);
         }, 850);
         clearInterval(interval);
-        setLoading(false);
       }
       return () => clearInterval(interval);
     }

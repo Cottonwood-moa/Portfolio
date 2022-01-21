@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import styles from "./labs.module.scss";
-import Nav from "../nav/nav";
-import Loading from "../loading/loading";
 import { Container } from "react-bootstrap";
-const Labs = (props) => {
-  const [loading, setLoading] = useState(true);
+const Labs = ({ loading }) => {
   return (
-    <>
-      <Loading loading={loading} setLoading={setLoading} />
-
-      {loading || <Nav />}
+    <div className={styles.test}>
       {loading || (
         <Container>
           <div className={styles.labsContainer}>Labs</div>
         </Container>
       )}
-    </>
+    </div>
   );
 };
 

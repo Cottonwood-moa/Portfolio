@@ -37,10 +37,34 @@ const Nav = (props) => {
       </div>
 
       <div className={styles.nav} ref={navRef}>
-        <NavIntro navigate={navigate} setIntroInfo={setIntroInfo} />
-        <NavLabs navigate={navigate} setLabsInfo={setLabsInfo} />
-        <NavPortfolio navigate={navigate} setPortfolioInfo={setPortfolioInfo} />
-        <NavContact navigate={navigate} setContactInfo={setContactInfo} />
+        <NavIntro
+          navigate={navigate}
+          setIntroInfo={setIntroInfo}
+          setOpen={setOpen}
+          navRef={navRef}
+          infoRef={infoRef}
+        />
+        <NavPortfolio
+          navigate={navigate}
+          setPortfolioInfo={setPortfolioInfo}
+          setOpen={setOpen}
+          navRef={navRef}
+          infoRef={infoRef}
+        />
+        <NavLabs
+          navigate={navigate}
+          setLabsInfo={setLabsInfo}
+          setOpen={setOpen}
+          navRef={navRef}
+          infoRef={infoRef}
+        />
+        <NavContact
+          navigate={navigate}
+          setContactInfo={setContactInfo}
+          setOpen={setOpen}
+          navRef={navRef}
+          infoRef={infoRef}
+        />
       </div>
 
       <div className={styles.navInfo} ref={infoRef}>

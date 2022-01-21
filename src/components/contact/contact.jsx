@@ -1,14 +1,13 @@
 import React, { useRef, useState } from "react";
 import styles from "./contact.module.scss";
-import Nav from "../nav/nav";
-import Loading from "../loading/loading";
 import { FaUser, FaEnvelopeSquare, FaCommentDots } from "react-icons/fa";
 import { Container, Form } from "react-bootstrap";
-const Contact = ({ submitEmail }) => {
+import { useNavigate } from "react-router-dom";
+const Contact = ({ submitEmail, loading }) => {
   const emailRef = useRef();
   const nameRef = useRef();
   const labelRef = useRef();
-  const [loading, setLoading] = useState(true);
+  const contactRef = useRef();
   const [sendLoading, setSendLoading] = useState(false);
   const [onName, setOnName] = useState(true);
   const [onEmail, setOnEmail] = useState(false);
@@ -82,14 +81,21 @@ const Contact = ({ submitEmail }) => {
       emailValidation();
     }
   };
+  // navigate animation
+  const navigate = new useNavigate();
   return (
     <>
       {sendLoading && <div className={styles.sending}></div>}
-      <Loading loading={loading} setLoading={setLoading} />
-      {loading || <Nav />}
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Go to Home
+      </button>
       {loading || (
         <Container>
-          <div className={styles.contactContainer}>
+          <div className={styles.contactContainer} ref={contactRef}>
             <div className={`${styles.contactDes} mb-3`}>
               <h1>Get in touch</h1>
               <div>
