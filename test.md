@@ -6,29 +6,29 @@
 console.log("Hello World");
 ```
 
-\`\`\`bash
+`bash
 
 # Default.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template DIRECTORY_NAME
 
-# With ESLint, Add \`#eslint\`.
+# With ESLint, Add `#eslint`.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template#eslint DIRECTORY_NAME
 
-# With ESLint + Vuex, Add \`#vuex\`.
+# With ESLint + Vuex, Add `#vuex`.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template#vuex DIRECTORY_NAME
 
-# With ESLint + Vuex + VueRouter, Add \`#vue-router\`.
+# With ESLint + Vuex + VueRouter, Add `#vue-router`.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template#vue-router DIRECTORY_NAME
 
-# With ESLint + Vuex + VueRouter + Jest + VTU, Add \`#jest\`.
+# With ESLint + Vuex + VueRouter + Jest + VTU, Add `#jest`.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template#jest DIRECTORY_NAME
 
-# With ESLint + Vuex + VueRouter + Jest + VTU + Cypress, Add \`#cypress\`.
+# With ESLint + Vuex + VueRouter + Jest + VTU + Cypress, Add `#cypress`.
 
 $ npx degit ParkYoungWoong/vue3-webpack-template#cypress DIRECTORY_NAME
 
@@ -37,7 +37,7 @@ $ npx degit ParkYoungWoong/vue3-webpack-template#cypress DIRECTORY_NAME
 $ cd DIRECTORY_NAME
 $ npm i
 $ npm run dev
-\`\`\`
+`
 
 ## Specs
 
@@ -61,15 +61,15 @@ $ npm run dev
 **webpack-dev-server**: 개발용으로 Live Server를 실행(HMR)\n
 
 **html-webpack-plugin**: 최초 실행될 HTML 파일(템플릿)을 연결\n
-**copy-webpack-plugin**: 정적 파일(파비콘, 이미지 등)을 제품(\`dist\`) 폴더로 복사\n
+**copy-webpack-plugin**: 정적 파일(파비콘, 이미지 등)을 제품(`dist`) 폴더로 복사\n
 
 **sass-loader**: SCSS(Sass) 파일을 로드\n
 **postcss-loader**: PostCSS(Autoprefixer)로 스타일 파일을 처리\n
 **css-loader**: CSS 파일을 로드\n
-**style-loader**: 로드된 스타일(CSS)을 \`<style>\`로 \`<head>\`에 삽입\n
+**style-loader**: 로드된 스타일(CSS)을 `<style>`로 `<head>`에 삽입\n
 **babel-loader**: JS 파일을 로드\n
 **vue-loader**: Vue 파일을 로드\n
-**vue-style-loader**: Vue 파일의 로드된 스타일(CSS)을 \`<style>\`로 \`<head>\`에 삽입\n
+**vue-style-loader**: Vue 파일의 로드된 스타일(CSS)을 `<style>`로 `<head>`에 삽입\n
 **file-loader**: 지정된 파일(이미지)을 로드\n
 
 **@babel/core**: ES6 이상의 코드를 ES5 이하 버전으로 변환\n
@@ -92,48 +92,38 @@ $ npm run dev
 
 **jest**: 단위 테스트 도구 **(+Jest)**\n
 **@vue/test-utils**: Vue.js 환경 테스트 도구 **(+Jest)**\n
-**vue-jest**: \`.vue\` 파일 변환 **(+Jest)**\n
-**babel-jest**: \`.js\` 파일 변환 **(+Jest)**\n
+**vue-jest**: `.vue` 파일 변환 **(+Jest)**\n
+**babel-jest**: `.js` 파일 변환 **(+Jest)**\n
 
 **cypress**: E2E 테스트 도구 **(+Cypress)**\n
 **eslint-plugin-cypress**: Cypress용 ESLint 플러그인 **(+Cypress)**\n
 
 ## 주의사항!
 
-\`\`\`js
-console.log("Hello World!");
-\`\`\`
+`js console.log("Hello World!"); `
 
-- \`npm i vue@next\`로 설치(3버전)
-- \`npm i vue-loader@next\`로 설치(3버전)
-- \`npm i -D @vue/test-utils@next\`로 설치(3버전)\n
-- \`npm i -D vue-jest@next\`로 설치(3버전)\n
-- \`npm i -D webpack-dev-server@next\`로 설치(webpack-cli 버전(@4^)과 일치)!\n
-- \`package.json\` 옵션으로 \`browserslist\` 추가!\n
-- \`.postcssrc.js\` 생성(PostCSS 구성 옵션)!\n
-- \`.babelrc.js\` 생성(Babel 구성 옵션)!\n
-- \`.eslintrc.js\` 생성(ESLint 구성 옵션)!\n
+- `npm i vue@next`로 설치(3버전)
+- `npm i vue-loader@next`로 설치(3버전)
+- `npm i -D @vue/test-utils@next`로 설치(3버전)\n
+- `npm i -D vue-jest@next`로 설치(3버전)\n
+- `npm i -D webpack-dev-server@next`로 설치(webpack-cli 버전(@4^)과 일치)!\n
+- `package.json` 옵션으로 `browserslist` 추가!\n
+- `.postcssrc.js` 생성(PostCSS 구성 옵션)!\n
+- `.babelrc.js` 생성(Babel 구성 옵션)!\n
+- `.eslintrc.js` 생성(ESLint 구성 옵션)!\n
 
 ## ESLint Auto fix on save for VSCode
 
-- 모든 명령 표시(Windows: \`Ctrl\`+\`Shift\`+\`P\` / macOS: \`Cmd\`+\`Shift\`+\`P\`)
-- 모든 명령 표시에서 \`settings\` 검색
-- \`Preferences: Open Settings (JSON)\` 선택
-- 오픈된 \`settings.json\`파일에서 아래 코드 추가 및 저장
+- 모든 명령 표시(Windows: `Ctrl`+`Shift`+`P` / macOS: `Cmd`+`Shift`+`P`)
+- 모든 명령 표시에서 `settings` 검색
+- `Preferences: Open Settings (JSON)` 선택
+- 오픈된 `settings.json`파일에서 아래 코드 추가 및 저장
 
-\`\`\`json
-{
-"eslint.validate": ["vue", "javascript", "javascriptreact", "html"],
-"eslint.alwaysShowStatus": true,
-"editor.codeActionsOnSave": {
-"source.fixAll.eslint": true
-}
-}
-\`\`\`
+`json { "eslint.validate": ["vue", "javascript", "javascriptreact", "html"], "eslint.alwaysShowStatus": true, "editor.codeActionsOnSave": { "source.fixAll.eslint": true } } `
 
 # 추가내용
 
 - vscode 확장 프로그램 ESLint 설치
-- \`eslint --init\` 후 작성해놓은 .eslintrc.js 덮어씌움
+- `eslint --init` 후 작성해놓은 .eslintrc.js 덮어씌움
 - 전역패키지 npm, eslint, @vue/cli 필요
 - (https://sunmon.github.io/vscode-eslint-prettier-setting/) 참조하면 좋음

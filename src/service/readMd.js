@@ -6,7 +6,7 @@ class ReadMd {
     };
 
     const res = fetch(
-      "https://raw.githubusercontent.com/Cottonwood-moa/Portfolio/master/README.md",
+      "https://raw.githubusercontent.com/Cottonwood-moa/Portfolio/master/test.md",
       requestOptions
     )
       .then((response) => response.text())

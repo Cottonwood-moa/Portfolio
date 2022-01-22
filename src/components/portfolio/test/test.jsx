@@ -22,6 +22,7 @@ function Test({ readMd }) {
         <div className={styles.labsContainer}>
           <ReactMarkdown
             children={mdFile}
+            remarkPlugins={[remarkGfm]}
             components={{
               code({ node, inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || "");
