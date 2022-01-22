@@ -1,22 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./contact.module.scss";
 import { FaUser, FaEnvelopeSquare, FaCommentDots } from "react-icons/fa";
 import { Container, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import ReturnPage from "../returnPage/returnPage";
+import PageLoadBar from "../pageLoadBar/pageLoadBar";
 const Contact = ({ submitEmail, loading }) => {
   const emailRef = useRef();
   const nameRef = useRef();
   const labelRef = useRef();
   const contactRef = useRef();
+  const location = useLocation();
   const [sendLoading, setSendLoading] = useState(false);
   const [onName, setOnName] = useState(true);
   const [onEmail, setOnEmail] = useState(false);
   const [onMessage, setOnMessage] = useState(false);
+  const [progress, setProgress] = useState(false);
+  const [arrowLeft, setArrowLeft] = useState();
   const [email, setEmail] = useState({
     name: null,
     message: null,
     email: null,
   });
+  const pageMoveRefs = useRef([]);
   const labelUp = () => {
     labelRef.current.style.width = "0";
   };
@@ -47,7 +53,6 @@ const Contact = ({ submitEmail, loading }) => {
   // 이름 유효성 검사
   const nameValidation = () => {
     if (!email.name) {
-      console.log("?");
       nameRef.current.style.borderBottom = "1px solid hotpink";
       setTimeout(() => {
         nameRef.current.style.borderBottom = "1px solid white";
@@ -81,136 +86,153 @@ const Contact = ({ submitEmail, loading }) => {
       emailValidation();
     }
   };
-  // navigate animation
-  const navigate = new useNavigate();
+
+  const anotherPage = (pageName) => {
+    setProgress(true);
+    arrowLeft.current.style.transform = "translateX(-200px)";
+    pageMoveRefs.current.map((item) => {
+      item.style.transform = "translateY(-10vh)";
+      item.style.opacity = "0";
+    });
+  };
+  useEffect(() => {
+    if (location.pathname !== "/contact") {
+      anotherPage();
+    }
+  }, [location.pathname]);
   return (
-    <>
+    <div className={styles.forRouteTransition}>
+      {progress && <PageLoadBar />}
+      <ReturnPage
+        pageName={"labs"}
+        setProgress={setProgress}
+        anotherPage={anotherPage}
+        setArrow={setArrowLeft}
+      />
       {sendLoading && <div className={styles.sending}></div>}
-      <button
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        Go to Home
-      </button>
-      {loading || (
-        <Container>
-          <div className={styles.contactContainer} ref={contactRef}>
-            <div className={`${styles.contactDes} mb-3`}>
-              <h1>Get in touch</h1>
-              <div>
-                If you wanna get in touch, talk to me about a project
-                collaboration or just say hi,
-              </div>
-              <div>
-                fill up the awesome form below or send an email to
-                geon0529@gmail.com and ~let's talk.
-              </div>
+      <Container>
+        <div className={styles.contactContainer} ref={contactRef}>
+          <div
+            className={`${styles.contactDes} mb-3`}
+            ref={(e) => (pageMoveRefs.current[0] = e)}
+          >
+            <div className={styles.title}>Get in touch</div>
+            <div className={styles.des}>
+              If you wanna get in touch, talk to me about a project
+              collaboration or just say hi,
             </div>
-            <div className={styles.userInfo}>
-              <span></span>
-              <span className={styles.user}>
-                <FaUser className={styles.icon} />
-                &nbsp;
-                {email.name ? email.name : "name"}
-              </span>
-              <span className={styles.user}>
-                <FaEnvelopeSquare className={styles.icon} />
-                &nbsp;
-                {email.email ? email.email : "email"}
-              </span>
+            <div className={styles.des}>
+              fill up the awesome form below or send an email to
+              geon0529@gmail.com and ~let's talk.
             </div>
-            <Form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-              className={styles.formContent}
-            >
-              {onName && (
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className={styles.label} ref={labelRef}>
-                    Fill with your name
-                  </Form.Label>
-                  <div className={styles.formIcon}>
-                    <FaUser className={styles.icon} />
-                    <Form.Control
-                      type="text"
-                      className={styles.email}
-                      ref={nameRef}
-                      autoComplete="off"
-                      name="name"
-                      maxLength="20"
-                      onFocus={labelUp}
-                      onBlur={labelDown}
-                      onChange={update}
-                    />
-                  </div>
-                  <Form.Text className={`${styles.formText} text-muted`}>
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                  <div className={styles.nextButton} onClick={next}>
-                    next
-                  </div>
-                </Form.Group>
-              )}
-              {onEmail && (
-                <Form.Group className={` mb-3`} controlId="formBasicEmail">
-                  <Form.Label className={styles.label} ref={labelRef}>
-                    Email address
-                  </Form.Label>
-                  <div className={styles.formIcon}>
-                    <FaEnvelopeSquare className={styles.icon} />
-                    <Form.Control
-                      type="email"
-                      className={styles.email}
-                      autoComplete="off"
-                      ref={emailRef}
-                      name="email"
-                      maxLength="20"
-                      onFocus={labelUp}
-                      onBlur={labelDown}
-                      onChange={update}
-                    />
-                  </div>
-                  <Form.Text className={`${styles.formText} text-muted`}>
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                  <div className={styles.nextButton} onClick={next}>
-                    next
-                  </div>
-                </Form.Group>
-              )}
-              {onMessage && (
-                <Form.Group className="mb-3">
-                  <Form.Label className={styles.label} ref={labelRef}>
-                    Message
-                  </Form.Label>
-                  <div className={styles.formIcon}>
-                    <FaCommentDots className={styles.icon} />
-                    <Form.Control
-                      type="text"
-                      className={styles.email}
-                      autoComplete="off"
-                      ref={emailRef}
-                      name="message"
-                      onFocus={labelUp}
-                      onBlur={labelDown}
-                      onChange={update}
-                    />
-                  </div>
-                  <Form.Text className={`${styles.formText} text-muted`}>
-                    We'll never share your email with anyone else.
-                  </Form.Text>
-                  <div className={styles.nextButton} onClick={submit}>
-                    send
-                  </div>
-                </Form.Group>
-              )}
-            </Form>
           </div>
-        </Container>
-      )}
-    </>
+          <div
+            className={styles.userInfo}
+            ref={(e) => (pageMoveRefs.current[1] = e)}
+          >
+            <span></span>
+            <span className={styles.user}>
+              <FaUser className={styles.icon} />
+              &nbsp;
+              {email.name ? email.name : "name"}
+            </span>
+            <span className={styles.user}>
+              <FaEnvelopeSquare className={styles.icon} />
+              &nbsp;
+              {email.email ? email.email : "email"}
+            </span>
+          </div>
+          <Form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+            className={styles.formContent}
+            ref={(e) => (pageMoveRefs.current[2] = e)}
+          >
+            {onName && (
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className={styles.label} ref={labelRef}>
+                  Fill with your name
+                </Form.Label>
+                <div className={styles.formIcon}>
+                  <FaUser className={styles.icon} />
+                  <Form.Control
+                    type="text"
+                    className={styles.email}
+                    ref={nameRef}
+                    autoComplete="off"
+                    name="name"
+                    maxLength="20"
+                    onFocus={labelUp}
+                    onBlur={labelDown}
+                    onChange={update}
+                  />
+                </div>
+                <Form.Text className={`${styles.formText} text-muted`}>
+                  We'll never share your email with anyone else.
+                </Form.Text>
+                <div className={styles.nextButton} onClick={next}>
+                  next
+                </div>
+              </Form.Group>
+            )}
+            {onEmail && (
+              <Form.Group className={` mb-3`} controlId="formBasicEmail">
+                <Form.Label className={styles.label} ref={labelRef}>
+                  Email address
+                </Form.Label>
+                <div className={styles.formIcon}>
+                  <FaEnvelopeSquare className={styles.icon} />
+                  <Form.Control
+                    type="email"
+                    className={styles.email}
+                    autoComplete="off"
+                    ref={emailRef}
+                    name="email"
+                    maxLength="20"
+                    onFocus={labelUp}
+                    onBlur={labelDown}
+                    onChange={update}
+                  />
+                </div>
+                <Form.Text className={`${styles.formText} text-muted`}>
+                  We'll never share your email with anyone else.
+                </Form.Text>
+                <div className={styles.nextButton} onClick={next}>
+                  next
+                </div>
+              </Form.Group>
+            )}
+            {onMessage && (
+              <Form.Group className="mb-3">
+                <Form.Label className={styles.label} ref={labelRef}>
+                  Message
+                </Form.Label>
+                <div className={styles.formIcon}>
+                  <FaCommentDots className={styles.icon} />
+                  <Form.Control
+                    type="text"
+                    className={styles.email}
+                    autoComplete="off"
+                    ref={emailRef}
+                    name="message"
+                    onFocus={labelUp}
+                    onBlur={labelDown}
+                    onChange={update}
+                  />
+                </div>
+                <Form.Text className={`${styles.formText} text-muted`}>
+                  We'll never share your email with anyone else.
+                </Form.Text>
+                <div className={styles.nextButton} onClick={submit}>
+                  send
+                </div>
+              </Form.Group>
+            )}
+          </Form>
+        </div>
+      </Container>
+    </div>
   );
 };
 

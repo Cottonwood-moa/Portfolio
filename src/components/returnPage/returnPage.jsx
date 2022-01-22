@@ -14,14 +14,14 @@ const ReturnPage = ({ pageName, anotherPage, setArrow }) => {
   return (
     <>
       <ReactTooltip id="returnTo" place="right" type="error" effect="solid">
-        Go to {pageName === "/" ? "main" : { pageName }}
+        Go to {!pageName ? "main" : pageName}
       </ReactTooltip>
       <div
         className={styles.area}
         ref={returnRef}
         data-tip
         data-for="returnTo"
-        onClick={() => navigate(pageName)}
+        onClick={() => navigate(`/${pageName}`)}
       >
         <div className={styles.test}>
           <div className={styles.next}></div>

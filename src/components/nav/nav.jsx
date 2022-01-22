@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import NavIntro from "./navIntro/navIntro";
@@ -13,6 +13,7 @@ import NavContactInfo from "./navContact/navContactInfo/navContactInfo";
 import NavInfo from "./navInfo/navInfo";
 const Nav = (props) => {
   const navigate = new useNavigate();
+  const location = new useLocation();
   const [isOpen, setOpen] = useState(false);
   const [introInfo, setIntroInfo] = useState(false);
   const [labsInfo, setLabsInfo] = useState(false);
@@ -21,6 +22,7 @@ const Nav = (props) => {
   const navRef = useRef();
   const infoRef = useRef();
   useEffect(() => {
+    console.log(isOpen);
     if (isOpen) {
       navRef.current.style.transform = "translateX(0)";
       infoRef.current.style.transform = "translateX(0)";
@@ -30,6 +32,9 @@ const Nav = (props) => {
       infoRef.current.style.transform = "translateX(50vw)";
     }
   }, [isOpen]);
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
   return (
     <div className={styles.container}>
       <div className={styles.hamburger}>

@@ -25,6 +25,14 @@ $xxl: 1364px;
     border-color: transparent;
   }
 }
+@keyframes test {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40rem;
+  }
+}
 
 @keyframes scale-easeInBounce {
   0% {
@@ -117,5 +125,15 @@ $xxl: 1364px;
   100% {
     right: 0;
     width: 0%;
+  }
+}
+
+@keyframes fontDown {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    font-size: 48px;
   }
 }

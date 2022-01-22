@@ -4,11 +4,20 @@ import ToPage from "../toPage/toPage";
 import ReturnPage from "../returnPage/returnPage";
 import Card from "./card/card";
 import { Container } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
+import Test from "./test/test";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 const Portfolio = (props) => {
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
   const [progress, setProgress] = useState(false);
   const [arrowRight, setArrowRight] = useState();
   const [arrowLeft, setArrowLeft] = useState();
@@ -30,21 +39,21 @@ const Portfolio = (props) => {
   return (
     <div className={styles.portfolioContainer}>
       {progress && <PageLoadBar />}
+      <ToPage
+        pageName={"labs"}
+        setProgress={setProgress}
+        anotherPage={anotherPage}
+        setArrow={setArrowRight}
+      />
+      <ReturnPage
+        pageName={""}
+        setProgress={setProgress}
+        anotherPage={anotherPage}
+        setArrow={setArrowLeft}
+      />
       <Container>
-        <ToPage
-          pageName={"labs"}
-          setProgress={setProgress}
-          anotherPage={anotherPage}
-          setArrow={setArrowRight}
-        />
-        <ReturnPage
-          pageName={"/"}
-          setProgress={setProgress}
-          anotherPage={anotherPage}
-          setArrow={setArrowLeft}
-        />
-        <div className={styles.test}>
-          <div className={styles.test2}></div>
+        <div className={styles.container}>
+          <Link to="test">child 1</Link>
         </div>
       </Container>
     </div>
