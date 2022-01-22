@@ -7,7 +7,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 function Test({ readMd }) {
   const testRef = useRef();
-  const [mdFile, setMdFile] = useState();
+  const [mdFile, setMdFile] = useState(``);
   const test = `# hello world`;
   const mdRead = async () => {
     const res = await readMd.readGithubMd();
