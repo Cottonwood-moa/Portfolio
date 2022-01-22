@@ -1,21 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+// CSS
 import styles from "./test.module.scss";
+import { Container } from "react-bootstrap";
+// MARK DOWN
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
+
 function Test({ readMd }) {
-  const testRef = useRef();
+  // useState
   const [mdFile, setMdFile] = useState(``);
-  const test = `# hello world`;
+  // get file.md -> use github api
   const mdRead = async () => {
     const res = await readMd.readGithubMd();
     await setMdFile(res);
   };
+  // useEffect
   useEffect(() => {
     mdRead();
   }, []);
+
   return (
     <div className={styles.test}>
       <Container>
