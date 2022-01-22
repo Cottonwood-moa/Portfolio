@@ -1,4 +1,4 @@
-# Vue3 템플릿 with Webpack
+# Vue3 템플릿 with Webpack 씨발 뭐고
 
 ## Installation
 
