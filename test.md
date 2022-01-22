@@ -48,7 +48,7 @@ $ npm run dev
 
 ## Packages
 
-**webpack**: 모듈(패키지) 번들러의 핵심 패키지<br>
+**webpack**: 모듈(패키지) 번들러의 핵심 패키지\n
 **webpack-cli**: 터미널에서 Webpack 명령(CLI)을 사용할 수 있음\n
 **webpack-dev-server**: 개발용으로 Live Server를 실행(HMR)\n
 
