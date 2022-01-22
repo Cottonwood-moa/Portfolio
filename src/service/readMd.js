@@ -5,13 +5,13 @@ class ReadMd {
       redirect: "follow",
     };
 
-    fetch(
-      "https://raw.githubusercontent.com/Cottonwood-moa/Portfolio/master/README.md",
+    const res = fetch(
+      "https://raw.githubusercontent.com/Cottonwood-moa/Portfolio/master/test.md",
       requestOptions
     )
       .then((response) => response.text())
-      .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+    return res;
   }
 }
 export default ReadMd;

@@ -2,6 +2,10 @@
 
 ## Installation
 
+```js
+console.log("Hello World");
+```
+
 \`\`\`bash
 
 # Default.
