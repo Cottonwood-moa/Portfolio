@@ -1,4 +1,4 @@
-# Business Card Maker
+# Web Portfolio
 
 ㅤ  
 [깃허브](https://github.com/Cottonwood-moa/Portfolio)  
@@ -35,9 +35,8 @@ React.js ++ 로 만든 Web Portfolio
 
 - React.js
 - react-router-dom
-- PostCSS
-- Firebase
-- OMDb API
+- Bootstrap
+- SCSS
 
 ### 구성
 
