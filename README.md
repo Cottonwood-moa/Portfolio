@@ -24,8 +24,6 @@ React.js ++ 로 만든 Web Portfolio
 
 ## 🎯 Goals
 
-ㅤ
-
 - React.js의 전반적인 컨셉과 Hooks를 적극 활용했습니다.
 - View를 위한 다양한 라이브러리를 사용했습니다.
 - Google spreadsheet + apps script를 이용해 E-Mail 전송을 구현하였습니다.
