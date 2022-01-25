@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Business Card Maker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ㅤ  
+[깃허브](https://github.com/Cottonwood-moa/Portfolio)  
+[Go to Website](https://movie-app-cottonwood.netlify.app/)
 
-## Available Scripts
+React.js ++ 로 만든 Web Portfolio
+ㅤ
 
-In the project directory, you can run:
+## 📖 Docs
 
-### `yarn start`
+- [React](https://reactjs.org/docs/getting-started.html)
+- [React-router](https://v5.reactrouter.com/web/guides/quick-start)
+- [Lodash](https://lodash.com/)
+- [react-customizable-progressbar](https://github.com/martyan/react-customizable-progressbar)
+- [icons](https://react-icons.github.io/react-icons/)
+- [react-markdown](https://github.com/remarkjs/react-markdown)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+- [react-scripts](https://www.npmjs.com/package/react-scripts)
+- [syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
+- [react-tooltip](https://www.npmjs.com/package/react-tooltip)
+- [react-transition-group/](https://reactcommunity.org/react-transition-group/)
+  ㅤ
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🎯 Goals
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ㅤ
 
-### `yarn test`
+- React.js의 전반적인 컨셉과 Hooks를 적극 활용했습니다.
+- View를 위한 다양한 라이브러리를 사용했습니다.
+- Google spreadsheet + apps script를 이용해 E-Mail 전송을 구현하였습니다.
+- Github API를 이용해 마크다운 파일을 읽어와 반응형 뷰를 제작했습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💡 Specs
 
-### `yarn build`
+- React.js
+- react-router-dom
+- PostCSS
+- Firebase
+- OMDb API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 구성
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```json
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-hook/window-size": "^3.0.7",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "aos": "^3.0.0-beta.6",
+    "axios": "^0.25.0",
+    "bootstrap": "5.1.3",
+    "hamburger-react": "^2.4.1",
+    "keen-slider": "^6.6.3",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.1",
+    "react-customizable-progressbar": "^1.0.3",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.0",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "4.0.3",
+    "react-syntax-highlighter": "^15.4.5",
+    "react-tooltip": "^4.2.21",
+    "react-transition-group": "^4.4.2",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.48.0",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest"]
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ㅤ
