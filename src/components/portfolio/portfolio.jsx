@@ -1,59 +1,148 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+// REACT ROUTER
+import { Link, useLocation, useNavigate } from "react-router-dom";
+// CSS
 import styles from "./portfolio.module.scss";
-import ToPage from "../toPage/toPage";
-import ReturnPage from "../returnPage/returnPage";
-import Card from "./card/card";
-import { Container } from "react-bootstrap";
-import {
-  Link,
-  Outlet,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Button, Container } from "react-bootstrap";
+// PLUG IN
+// COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
-import Test from "./test/test";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-const Portfolio = (props) => {
+import Card from "./card/card";
+import cardMaker from "../common/images/cardmaker.png";
+import movie from "../common/images/movie.png";
+import beer from "../common/images/beer.png";
+import foodREC from "../common/images/foodREC.png";
+import moneygame from "../common/images/moneygame.png";
+import loverface from "../common/images/loverface.png";
+import charactertest from "../common/images/charactertest.png";
+import starbucks from "../common/images/starbucks.png";
+import lifemarker from "../common/images/lifemarker.png";
+
+const Portfolio = ({ setNestLoading }) => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const now = new Date();
+  const year = now.getFullYear();
+  // useState
   const [progress, setProgress] = useState(false);
-  const [arrowRight, setArrowRight] = useState();
-  const [arrowLeft, setArrowLeft] = useState();
-  const pageMoveRefs = useRef([]);
-  const anotherPage = (pageName) => {
-    setProgress(true);
-    arrowRight.current.style.transform = "translateX(200px)";
-    arrowLeft.current.style.transform = "translateX(-200px)";
-    pageMoveRefs.current.map((item) => {
-      item.style.transform = "translateY(-10vh)";
-      item.style.opacity = "0";
-    });
-  };
+  // useRef
+  const pageMoveRef = useRef();
+  // useEffect
   useEffect(() => {
-    if (location.pathname !== "/portfolio") {
+    if (!location.pathname.includes("portfolio")) {
       anotherPage();
     }
   }, [location.pathname]);
+  // function
+  const anotherPage = () => {
+    setProgress(true);
+    pageMoveRef.current.style.transition = "0.4s 1.2s";
+    pageMoveRef.current.style.opacity = "0";
+    pageMoveRef.current.style.transform = "translateY(-20px)";
+  };
   return (
     <div className={styles.portfolioContainer}>
       {progress && <PageLoadBar />}
-      <ToPage
-        pageName={"labs"}
-        setProgress={setProgress}
-        anotherPage={anotherPage}
-        setArrow={setArrowRight}
-      />
-      <ReturnPage
-        pageName={""}
-        setProgress={setProgress}
-        anotherPage={anotherPage}
-        setArrow={setArrowLeft}
-      />
-      <Container>
+      <Container ref={pageMoveRef} className={styles.bootContainer}>
         <div className={styles.container}>
-          <Link to="test">child 1</Link>
+          <h1 className={styles.title}>web developer portfolio</h1>
+          <span className={styles.subTitle}>
+            From Web Components and UI/UX animations to React.JS, Redux, Vue.JS,
+            and Node.JS. Check out my latest web software development portfolio
+            projects.
+          </span>
+          <div className={styles.cardWrap}>
+            <Link to="characterTest">
+              <Card tags={["HTML", "CSS", "JS"]} />
+            </Link>
+
+            <Link to="CardMaker">
+              <Card
+                title={"CardMaker"}
+                thumbnail={cardMaker}
+                tags={[
+                  "WebApp",
+                  "React.js",
+                  "React-Router",
+                  "FireBase",
+                  "PostCss",
+                ]}
+              />
+            </Link>
+          </div>
+          <div className={styles.cardWrap}>
+            <Link to="imdbMovieApp">
+              <Card
+                title={"imdbMovieApp"}
+                thumbnail={movie}
+                tags={[
+                  "WebApp",
+                  "Vue.js",
+                  "VueX",
+                  "Vue Router",
+                  "Jest",
+                  "VTU",
+                  "Cypress",
+                  "Scss",
+                ]}
+              />
+            </Link>
+            <Link to="LifeMarker">
+              <Card
+                title={"LifeMarker"}
+                thumbnail={lifemarker}
+                tags={["WebApp", "Vue.js", "Scss", "VueX", "Vue Router"]}
+              />
+            </Link>
+            <Link to="BEERCRAFT">
+              <Card
+                title={"Beercarft"}
+                thumbnail={beer}
+                tags={["WebApp", "JQuery", "Python", "Django"]}
+              />
+            </Link>
+          </div>
+          <div className={styles.cardWrap}>
+            <Link to="restaurant">
+              <Card
+                title={"restaurant"}
+                thumbnail={foodREC}
+                tags={["WebApp", "Javascript", "Node.js", "Python"]}
+              />
+            </Link>
+            <Link to="Starbucks">
+              <Card
+                title={"Starbucks"}
+                thumbnail={starbucks}
+                tags={["Clone Web", "Javascript"]}
+              />
+            </Link>
+          </div>
+          <div className={styles.cardWrap}>
+            <Link to="moneygame">
+              <Card
+                title={"moneygame"}
+                thumbnail={moneygame}
+                tags={["WebApp", "Javascript", "JQuery"]}
+              />
+            </Link>
+            <Link to="loverface">
+              <Card
+                title={"loverface"}
+                thumbnail={loverface}
+                tags={["WebApp", "Javascript", "JQuery"]}
+              />
+            </Link>
+            <Link to="characterTest">
+              <Card
+                title={"characterTest"}
+                thumbnail={charactertest}
+                tags={["WebApp", "Javascript", "JQuery"]}
+              />
+            </Link>
+          </div>
+        </div>
+        <div className={styles.copyright}>
+          Copyrightⓒ{year} by Cottonwood(Geonwoo Park).
         </div>
       </Container>
     </div>

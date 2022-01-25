@@ -1,5 +1,53 @@
+@import "../../../common/main.scss";
+
 .card {
-  width: 10em;
-  height: 8em;
-  background-color: white;
+  position: relative;
+  width: 24em;
+  height: 16em;
+  background-color: rgb(131, 131, 131);
+  margin: 2em 1.5em 2em 1.5em;
+  // position: absolute;
+  box-shadow: 10px 10px 1px 5px #000000;
+  background-size: 24em 16em;
+  .image {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 2em);
+  }
+  .forHover {
+    width: 100%;
+    height: calc(100% - 2em);
+    background-color: $backgrounWithOpacity;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &:hover {
+    .forHover {
+      transform: scaleY(1);
+    }
+  }
+  .header {
+    width: 100%;
+    height: 2em;
+    background-color: silver;
+    .title {
+      color: $basicText;
+      font-weight: bold;
+    }
+
+    .tree {
+      height: 2em;
+    }
+  }
 }

@@ -11,7 +11,7 @@ import NavPortfolioInfo from "./navPortfolio/navPortfolioInfo/navPortfolioInfo";
 import NavContact from "./navContact/navContact";
 import NavContactInfo from "./navContact/navContactInfo/navContactInfo";
 import NavInfo from "./navInfo/navInfo";
-const Nav = (props) => {
+const Nav = ({ getNavRefs }) => {
   const navigate = new useNavigate();
   const location = new useLocation();
   const [isOpen, setOpen] = useState(false);
@@ -21,8 +21,9 @@ const Nav = (props) => {
   const [contactInfo, setContactInfo] = useState(false);
   const navRef = useRef();
   const infoRef = useRef();
+  const profileRef = useRef();
+  const hamburgerRef = useRef();
   useEffect(() => {
-    console.log(isOpen);
     if (isOpen) {
       navRef.current.style.transform = "translateX(0)";
       infoRef.current.style.transform = "translateX(0)";
@@ -34,13 +35,22 @@ const Nav = (props) => {
   }, [isOpen]);
   useEffect(() => {
     setOpen(false);
-  }, [location]);
+  }, [location.pathname]);
+  useEffect(() => {
+    getNavRefs(profileRef, hamburgerRef);
+  }, []);
   return (
     <div className={styles.container}>
-      <div className={styles.hamburger}>
-        <Hamburger toggled={isOpen} toggle={setOpen} size={48} />
+      <div className={styles.header}>
+        <div className={styles.forTransition} ref={profileRef}>
+          <div className={styles.profile}></div>
+        </div>
+        <div className={styles.forTransition} ref={hamburgerRef}>
+          <div className={styles.hamburger}>
+            <Hamburger toggled={isOpen} toggle={setOpen} size={48} />
+          </div>
+        </div>
       </div>
-
       <div className={styles.nav} ref={navRef}>
         <NavIntro
           navigate={navigate}

@@ -3,7 +3,6 @@ import styles from "./contact.module.scss";
 import { FaUser, FaEnvelopeSquare, FaCommentDots } from "react-icons/fa";
 import { Container, Form } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
-import ReturnPage from "../returnPage/returnPage";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 const Contact = ({ submitEmail, loading }) => {
   const emailRef = useRef();
@@ -16,7 +15,6 @@ const Contact = ({ submitEmail, loading }) => {
   const [onEmail, setOnEmail] = useState(false);
   const [onMessage, setOnMessage] = useState(false);
   const [progress, setProgress] = useState(false);
-  const [arrowLeft, setArrowLeft] = useState();
   const [email, setEmail] = useState({
     name: null,
     message: null,
@@ -89,7 +87,6 @@ const Contact = ({ submitEmail, loading }) => {
 
   const anotherPage = (pageName) => {
     setProgress(true);
-    arrowLeft.current.style.transform = "translateX(-200px)";
     pageMoveRefs.current.map((item) => {
       item.style.transform = "translateY(-10vh)";
       item.style.opacity = "0";
@@ -103,12 +100,6 @@ const Contact = ({ submitEmail, loading }) => {
   return (
     <div className={styles.forRouteTransition}>
       {progress && <PageLoadBar />}
-      <ReturnPage
-        pageName={"labs"}
-        setProgress={setProgress}
-        anotherPage={anotherPage}
-        setArrow={setArrowLeft}
-      />
       {sendLoading && <div className={styles.sending}></div>}
       <Container>
         <div className={styles.contactContainer} ref={contactRef}>

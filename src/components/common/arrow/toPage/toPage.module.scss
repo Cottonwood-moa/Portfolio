@@ -1,16 +1,16 @@
-@import "../../common/main.scss";
+@import "../../../../common/main.scss";
 .area {
   width: 100px;
   height: 100px;
   position: fixed;
-  left: 20px;
+  right: 20px;
   top: 50%;
   transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   cursor: pointer;
   .test {
-    transform: translateX(-20px);
+    transform: translateX(20px);
     opacity: 0;
-    animation: pageMove 0.8s 2.6s forwards;
+    animation: justTransX 0.8s 2.3s forwards;
     z-index: 1;
     .next {
       width: 50px;
@@ -24,7 +24,7 @@
       height: 100%;
       width: 2px;
       background-color: $chosenText;
-      transform: rotate(45deg);
+      transform: rotate(-45deg);
       transform-origin: 50% 100% 0;
       transition: 0.2s;
     }
@@ -35,7 +35,7 @@
       height: 100%;
       width: 2px;
       background-color: $chosenText;
-      transform: rotate(135deg);
+      transform: rotate(-135deg);
       transform-origin: 50% 100% 0;
       transition: 0.2s;
     }
@@ -43,15 +43,18 @@
 
   &:hover {
     .next::after {
-      transform: rotate(60deg);
+      transform: rotate(-60deg);
     }
     .next::before {
-      transform: rotate(120deg);
+      transform: rotate(-120deg);
     }
   }
 
   @media screen and (max-width: $lg) {
     .next {
+      display: none;
+    }
+    .area {
       display: none;
     }
   }

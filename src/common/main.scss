@@ -6,7 +6,7 @@ $buttonBottom: black;
 $buttonTop: rgb(168, 168, 168);
 $testColor: white;
 $background: #1f1f1f;
-
+$backgrounWithOpacity: rgb(31, 31, 31, 0.8);
 // break points
 
 $sm: 540px;
@@ -103,12 +103,20 @@ $xxl: 1364px;
   }
 }
 
-@keyframes pageMove {
+@keyframes justTransX {
   0% {
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+@keyframes justTransY {
+  0% {
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -135,5 +143,63 @@ $xxl: 1364px;
   100% {
     opacity: 1;
     font-size: 48px;
+  }
+}
+@keyframes scaleXup {
+  0% {
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bounceX {
+  0% {
+    transform: translateX(0%);
+  }
+
+  4% {
+    transform: translateX(-1.54%);
+  }
+
+  8% {
+    transform: translateX(-0.66%);
+  }
+
+  18% {
+    transform: translateX(-6.25%);
+  }
+
+  26% {
+    transform: translateX(-1.63%);
+  }
+
+  46% {
+    transform: translateX(-24.98%);
+  }
+
+  64% {
+    transform: translateX(-1.99%);
+  }
+
+  76% {
+    transform: translateX(-56.44%);
+  }
+
+  88% {
+    transform: translateX(-89.11%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes justOpacity {
+  0% {
+  }
+  100% {
+    opacity: 1;
   }
 }

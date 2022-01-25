@@ -1,12 +1,12 @@
 class ReadMd {
-  async readGithubMd() {
+  async readGithubMd(repository) {
     const requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
     const res = fetch(
-      "https://raw.githubusercontent.com/Cottonwood-moa/Portfolio/master/test.md",
+      `https://raw.githubusercontent.com/Cottonwood-moa/${repository}/master/README.md`,
       requestOptions
     )
       .then((response) => response.text())

@@ -4,7 +4,7 @@
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: $chosenText;
+  background-color: $background;
   right: 0;
   display: flex;
   justify-content: center;
@@ -17,16 +17,16 @@
   background: url(https://media1.giphy.com/media/j0HjChGV0J44KrrlGv/giphy.gif?cid=ecf05e477ximpy5692kt5tiziebrjr0ploegcy7e3xf2bn71&rid=giphy.gif&ct=s)
     no-repeat center center;
   background-size: 101% 101%;
-  transition: 0.8s;
-  transform: translateY(10em);
+  transition: 0.4s;
+  transform: translateY(2em);
   opacity: 0;
 }
 .title {
   color: $basicText;
   font-weight: bold;
   margin-top: 1em;
-  transition: 0.8s 0.4s;
-  transform: translateY(10em);
+  transition: 0.4s 0.2s;
+  transform: translateY(2em);
   opacity: 0;
 }
 .text {

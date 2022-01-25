@@ -4,16 +4,19 @@ import styles from "./intro.module.scss";
 import { Container } from "react-bootstrap";
 import ReactTooltip from "react-tooltip";
 import { useLocation, useNavigate } from "react-router-dom";
-import ToPage from "../toPage/toPage";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
+import { useWindowSize } from "@react-hook/window-size/";
+
+// import Nav from "../nav/nav";
 
 const Intro = (props) => {
+  const [widthD, heightD] = useWindowSize();
   // date
   const now = new Date();
   const year = now.getFullYear();
   // useState
   const [progress, setProgress] = useState(false);
-  const [arrowRight, setArrowRight] = useState();
+  const [follow, setFollow] = useState(false);
   // use react-router-dom
   const navigate = useNavigate();
   const location = useLocation();
@@ -24,12 +27,19 @@ const Intro = (props) => {
   // function
   const anotherPage = (pageName) => {
     setProgress(true);
-    arrowRight.current.style.transform = "translateX(200px)";
     pageMoveRefs.current.map((item) => {
       item.style.transform = "translateY(-10vh)";
       item.style.opacity = "0";
     });
   };
+  useEffect(() => {
+    if (widthD < 924) {
+      setFollow(false);
+    }
+    if (widthD >= 924) {
+      setFollow(true);
+    }
+  }, [location, setFollow, widthD]);
   useEffect(() => {
     if (location.pathname !== "/") {
       anotherPage();
@@ -37,13 +47,8 @@ const Intro = (props) => {
   }, [location.pathname]);
   return (
     <div className={styles.forRouteTransition}>
+      {/* <Nav getNavRefs={getNavRefs} /> */}
       {progress && <PageLoadBar />}
-      <ToPage
-        pageName={"portfolio"}
-        setProgress={setProgress}
-        anotherPage={anotherPage}
-        setArrow={setArrowRight}
-      />
       <div className={styles.introContainer}>
         <Container>
           <div
@@ -64,42 +69,50 @@ const Intro = (props) => {
             className={styles.follows}
             ref={(e) => (pageMoveRefs.current[1] = e)}
           >
-            <ReactTooltip id="codepenTip" type="error" effect="float">
-              Codepen
-            </ReactTooltip>
-            <a
-              href="https://codepen.io/Cottonwood"
-              data-tip
-              data-for="codepenTip"
-              className={`${styles.follow} ${styles.codepen}`}
-            ></a>
-            <ReactTooltip id="githubTip" type="error" effect="float">
-              Github
-            </ReactTooltip>
-            <a
-              href="https://github.com/Cottonwood-moa"
-              data-tip
-              data-for="githubTip"
-              className={`${styles.follow} ${styles.github}`}
-            ></a>
+            {follow && (
+              <>
+                <ReactTooltip id="codepenTip" type="error" effect="float">
+                  Codepen
+                </ReactTooltip>
+                <a
+                  href="https://codepen.io/Cottonwood"
+                  data-tip
+                  data-for="codepenTip"
+                  className={`${styles.follow} ${styles.codepen}`}
+                ></a>
+                <ReactTooltip id="githubTip" type="error" effect="float">
+                  Github
+                </ReactTooltip>
+                <a
+                  href="https://github.com/Cottonwood-moa"
+                  data-tip
+                  data-for="githubTip"
+                  className={`${styles.follow} ${styles.github}`}
+                ></a>
+              </>
+            )}
             <div className={styles.image}></div>
-            <ReactTooltip id="blogTip" type="error" effect="float">
-              Blog
-            </ReactTooltip>
-            <a
-              href="https://cottonwood-moa.tistory.com/"
-              data-tip
-              data-for="blogTip"
-              className={`${styles.follow} ${styles.techBlog}`}
-            ></a>
-            <ReactTooltip id="phoneTip" type="error" effect="float">
-              +82-10-2831-6735
-            </ReactTooltip>
-            <div
-              data-tip
-              data-for="phoneTip"
-              className={`${styles.follow} ${styles.phone}`}
-            ></div>
+            {follow && (
+              <>
+                <ReactTooltip id="blogTip" type="error" effect="float">
+                  Blog
+                </ReactTooltip>
+                <a
+                  href="https://cottonwood-moa.tistory.com/"
+                  data-tip
+                  data-for="blogTip"
+                  className={`${styles.follow} ${styles.techBlog}`}
+                ></a>
+                <ReactTooltip id="phoneTip" type="error" effect="float">
+                  +82-10-2831-6735
+                </ReactTooltip>
+                <div
+                  data-tip
+                  data-for="phoneTip"
+                  className={`${styles.follow} ${styles.phone}`}
+                ></div>
+              </>
+            )}
           </div>
           <div
             className={styles.info}
