@@ -27,6 +27,7 @@ const Intro = (props) => {
   // function
   const anotherPage = (pageName) => {
     setProgress(true);
+    // eslint-disable-next-line array-callback-return
     pageMoveRefs.current.map((item) => {
       item.style.transform = "translateY(-10vh)";
       item.style.opacity = "0";

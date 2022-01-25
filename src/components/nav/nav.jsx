@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import NavIntro from "./navIntro/navIntro";
@@ -38,7 +38,7 @@ const Nav = ({ getNavRefs }) => {
   }, [location.pathname]);
   useEffect(() => {
     getNavRefs(profileRef, hamburgerRef);
-  }, []);
+  }, [getNavRefs]);
   return (
     <div className={styles.container}>
       <div className={styles.header}>

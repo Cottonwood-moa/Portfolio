@@ -20,7 +20,7 @@ const ToPage = ({ nextLocation, location, setNextLocation }) => {
     if (widthD >= 924) {
       setToPage(true);
     }
-  }, [location, setToPage, widthD]);
+  }, [location, setToPage, widthD, nextLocation]);
 
   useEffect(() => {
     if (widthD >= 924) {
