@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import Tag from "../../../common/tag/tag";
 import styles from "./navLabsInfo.module.scss";
 const NavLabsInfo = ({ labsInfo }) => {
   const imageRef = useRef();
   const titleRef = useRef();
-  const textRef = useRef();
   useEffect(() => {
     if (labsInfo) {
       imageRef.current.style.transform = "translateY(0)";

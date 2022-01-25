@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 // REACT ROUTER
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // CSS
 import styles from "./portfolio.module.scss";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 // PLUG IN
 // COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
@@ -17,6 +17,7 @@ import loverface from "../common/images/loverface.png";
 import charactertest from "../common/images/charactertest.png";
 import starbucks from "../common/images/starbucks.png";
 import lifemarker from "../common/images/lifemarker.png";
+import portfolio from "../common/images/portfolio.png";
 
 const Portfolio = ({ setNestLoading }) => {
   const location = useLocation();
@@ -51,8 +52,12 @@ const Portfolio = ({ setNestLoading }) => {
             projects.
           </span>
           <div className={styles.cardWrap}>
-            <Link to="characterTest">
-              <Card tags={["HTML", "CSS", "JS"]} />
+            <Link to="webPortfolio">
+              <Card
+                title={"Web Portfolio"}
+                thumbnail={portfolio}
+                tags={["WebApp", "React.js", "React-Router", "SCSS"]}
+              />
             </Link>
 
             <Link to="CardMaker">

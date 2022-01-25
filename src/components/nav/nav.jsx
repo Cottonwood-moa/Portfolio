@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import NavIntro from "./navIntro/navIntro";
@@ -43,7 +43,12 @@ const Nav = ({ getNavRefs }) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.forTransition} ref={profileRef}>
-          <div className={styles.profile}></div>
+          <div
+            className={styles.profile}
+            onClick={() =>
+              (window.location.href = "https://cottonwood-moa.tistory.com/")
+            }
+          ></div>
         </div>
         <div className={styles.forTransition} ref={hamburgerRef}>
           <div className={styles.hamburger}>

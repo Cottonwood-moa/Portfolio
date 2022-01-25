@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import styles from "./arrow.module.scss";
 import ToPage from "./toPage/toPage";
 import ReturnPage from "./returnPage/returnPage";
 const Arrow = ({ location }) => {
   const [nextLocation, setNextLocation] = useState();
   const [backLocation, setBackLocation] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [locations, setLocations] = useState({
     "/": {
       next: "portfolio",
@@ -22,9 +22,13 @@ const Arrow = ({ location }) => {
       next: "about",
       back: "labs",
     },
+    "/portfolio/webPortfolio": {
+      next: "portfolio/CardMaker",
+      back: "portfolio/characterTest",
+    },
     "/portfolio/CardMaker": {
       next: "portfolio/LifeMarker",
-      back: "portfolio/characterTest",
+      back: "portfolio/webPortfolio",
     },
     "/portfolio/imdbMovieApp": {
       next: "portfolio/LifeMarker",
@@ -40,7 +44,7 @@ const Arrow = ({ location }) => {
     },
     "/portfolio/restaurant": {
       next: "portfolio/Starbucks",
-      back: "portfolio/LifeMarker",
+      back: "portfolio/BEERCRAFT",
     },
     "/portfolio/Starbucks": {
       next: "portfolio/moneygame",

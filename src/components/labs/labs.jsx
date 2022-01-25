@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./labs.module.scss";
 import { Container } from "react-bootstrap";
 import { throttle } from "lodash";

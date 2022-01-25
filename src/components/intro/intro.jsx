@@ -1,15 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./intro.module.scss";
 import { Container } from "react-bootstrap";
 import ReactTooltip from "react-tooltip";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import { useWindowSize } from "@react-hook/window-size/";
 
 // import Nav from "../nav/nav";
 
 const Intro = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
   // date
   const now = new Date();
@@ -18,12 +19,11 @@ const Intro = (props) => {
   const [progress, setProgress] = useState(false);
   const [follow, setFollow] = useState(false);
   // use react-router-dom
-  const navigate = useNavigate();
   const location = useLocation();
   // useRef
   const pageMoveRefs = useRef([]);
   // variable
-  const titleArray = ["A", "B", "O", "U", "T", "ㅤ", "M", "E"];
+  const titleArray = ["A", "B", "O", "U", "T"];
   // function
   const anotherPage = (pageName) => {
     setProgress(true);
@@ -127,14 +127,7 @@ const Intro = (props) => {
               <ReactTooltip id="labsTip" type="error" effect="float">
                 Go to Code laboratory
               </ReactTooltip>
-              <span
-                className={styles.link}
-                data-tip
-                data-for="labsTip"
-                // onClick={() => {
-                //   anotherPage("labs");
-                // }}
-              >
+              <span className={styles.link} data-tip data-for="labsTip">
                 code laboratory
               </span>
               .
@@ -144,14 +137,7 @@ const Intro = (props) => {
               <ReactTooltip id="portfolioTip" type="error" effect="float">
                 Go to Portfolio
               </ReactTooltip>
-              <span
-                className={styles.link}
-                data-tip
-                data-for="portfolioTip"
-                // onClick={() => {
-                //   anotherPage("portfolio");
-                // }}
-              >
+              <span className={styles.link} data-tip data-for="portfolioTip">
                 portfolio page
               </span>
               .

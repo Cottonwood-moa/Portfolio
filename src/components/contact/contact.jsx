@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./contact.module.scss";
 import { FaUser, FaEnvelopeSquare, FaCommentDots } from "react-icons/fa";
 import { Container, Form } from "react-bootstrap";
+// eslint-disable-next-line no-unused-vars
 import { useLocation, useNavigate } from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 const Contact = ({ submitEmail, loading }) => {
@@ -87,6 +88,7 @@ const Contact = ({ submitEmail, loading }) => {
 
   const anotherPage = (pageName) => {
     setProgress(true);
+    // eslint-disable-next-line array-callback-return
     pageMoveRefs.current.map((item) => {
       item.style.transform = "translateY(-10vh)";
       item.style.opacity = "0";

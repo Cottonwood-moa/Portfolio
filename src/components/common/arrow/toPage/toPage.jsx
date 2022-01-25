@@ -5,6 +5,7 @@ import styles from "./toPage.module.scss";
 import { useWindowSize } from "@react-hook/window-size/";
 
 const ToPage = ({ nextLocation, location, setNextLocation }) => {
+  // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
   const navigate = useNavigate();
   const nextRef = useRef();
@@ -28,6 +29,7 @@ const ToPage = ({ nextLocation, location, setNextLocation }) => {
         nextRef.current.style.transform = "translateX(0)";
       }, 1600);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   useEffect(() => {
@@ -45,6 +47,8 @@ const ToPage = ({ nextLocation, location, setNextLocation }) => {
   const getLocation = (nextLocation) => {
     if (nextLocation.includes("portfolio/")) {
       setForTooltip(nextLocation.replace("portfolio/", ""));
+    } else {
+      setForTooltip(nextLocation);
     }
   };
   return (

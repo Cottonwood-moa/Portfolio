@@ -7,6 +7,7 @@ const ReturnPage = ({ backLocation, location, setBackLocation }) => {
   const navigate = useNavigate();
   const returnRef = useRef();
   const [newLoaction, setNewLocation] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
   const [returnPage, setReturnPage] = useState(true);
   const [forTooltip, setForTooltip] = useState();
@@ -27,6 +28,7 @@ const ReturnPage = ({ backLocation, location, setBackLocation }) => {
         returnRef.current.style.transform = "translateX(0)";
       }, 1600);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
   useEffect(() => {
     if (backLocation === "about") {
@@ -43,6 +45,8 @@ const ReturnPage = ({ backLocation, location, setBackLocation }) => {
   const getLocation = (backLocation) => {
     if (backLocation.includes("portfolio/")) {
       setForTooltip(backLocation.replace("portfolio/", ""));
+    } else {
+      setForTooltip(backLocation);
     }
   };
   return (
