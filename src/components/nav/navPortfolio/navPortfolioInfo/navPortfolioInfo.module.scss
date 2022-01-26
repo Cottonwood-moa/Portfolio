@@ -11,21 +11,15 @@
   align-items: center;
   flex-direction: column;
 }
-.elementContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.element {
-  width: 200px;
-  height: 250px;
-  margin: 1em;
-  background-color: #fff;
-  border-radius: 10%;
-}
 .info {
   color: $basicText;
   padding-top: 2em;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
+}
+.infoGif {
+  width: 100%;
+  height: 50%;
+  background: url(https://user-images.githubusercontent.com/79053495/151191805-7286b0bb-4b0a-4325-b542-afca5993f917.gif)
+    no-repeat center center;
 }

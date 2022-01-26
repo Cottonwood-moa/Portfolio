@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import { useWindowSize } from "@react-hook/window-size/";
+import ReactTooltip from "react-tooltip";
+
 import NavIntro from "./navIntro/navIntro";
 import NavIntroInfo from "./navIntro/navIntroInfo/navIntroInfo";
 import NavLabs from "./navLabs/navLabs";
@@ -12,6 +14,7 @@ import NavPortfolioInfo from "./navPortfolio/navPortfolioInfo/navPortfolioInfo";
 import NavContact from "./navContact/navContact";
 import NavContactInfo from "./navContact/navContactInfo/navContactInfo";
 import NavInfo from "./navInfo/navInfo";
+import Cube from "../common/cube/cube";
 const Nav = ({ getNavRefs }) => {
   // 디바운스가 적용된 실시간 size hook (쓰로틀도 있음 -> npm 참조)
   // eslint-disable-next-line no-unused-vars
@@ -24,17 +27,35 @@ const Nav = ({ getNavRefs }) => {
   const [portfolioInfo, setPortfolioInfo] = useState(false);
   const [contactInfo, setContactInfo] = useState(false);
   const [screen, setScreen] = useState(true);
+  const [cube, setcube] = useState(false);
   const navRef = useRef();
   const infoRef = useRef();
-  const profileRef = useRef();
+  const leftThingRef = useRef();
   const hamburgerRef = useRef();
+  const cubeRef = useRef();
+  const forCube = () => {
+    if (location.pathname.includes("/portfolio/")) {
+      setTimeout(() => {
+        setcube(true);
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        setcube(false);
+      }, 1600);
+    }
+  };
+  useEffect(() => {
+    forCube();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
   // 페이지 이동시 메뉴가 열려있다면 닫기
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
-  // 햄버거, 프로필 ref 자식 컴포넌트에서 받아오기
+
+  // 햄버거, 프로필 ref 자식 컴포넌트에서 올려주기
   useEffect(() => {
-    getNavRefs(profileRef, hamburgerRef);
+    getNavRefs(leftThingRef, hamburgerRef);
   }, [getNavRefs]);
   // screen width에 따라 nav 반응형
   useEffect(() => {
@@ -72,13 +93,36 @@ const Nav = ({ getNavRefs }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <div className={styles.forTransition} ref={profileRef}>
-          <div
-            className={styles.profile}
-            onClick={() =>
-              (window.location.href = "https://cottonwood-moa.tistory.com/")
-            }
-          ></div>
+        <div className={styles.forTransition} ref={leftThingRef}>
+          {cube && (
+            <>
+              <ReactTooltip
+                id="goBackToPortfolio"
+                place="right"
+                type="error"
+                effect="solid"
+              >
+                Go back to Portfolio
+              </ReactTooltip>
+              <div
+                className={styles.cubes}
+                ref={cubeRef}
+                data-tip
+                data-for="goBackToPortfolio"
+                onClick={() => navigate("/portfolio")}
+              >
+                <Cube />
+              </div>
+            </>
+          )}
+          {cube || (
+            <div
+              className={styles.profile}
+              onClick={() =>
+                (window.location.href = "https://cottonwood-moa.tistory.com/")
+              }
+            ></div>
+          )}
         </div>
         <div className={styles.forTransition} ref={hamburgerRef}>
           <div className={styles.hamburger}>

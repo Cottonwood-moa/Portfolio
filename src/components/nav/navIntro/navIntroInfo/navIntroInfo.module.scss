@@ -25,6 +25,9 @@
   border-radius: 50%;
   transform: scale(0);
   animation: scale-easeInBounce 1s forwards 0.8s;
+  background: url(https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg)
+    no-repeat center center;
+  background-size: 101% 101%;
 }
 .info {
   display: flex;

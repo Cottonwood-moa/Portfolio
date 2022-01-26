@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import styles from "./navPortfolio.module.scss";
 const NavPortfolio = ({
   navigate,
@@ -14,15 +13,7 @@ const NavPortfolio = ({
   const mouseOutEvent = () => {
     setPortfolioInfo(false);
   };
-  const location = useLocation();
-  const [active, setActive] = useState(false);
-  useEffect(() => {
-    if (location.pathname === "/portfolio") {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  }, [active, location.pathname]);
+
   return (
     <>
       <div
@@ -39,9 +30,7 @@ const NavPortfolio = ({
             navigate("/portfolio");
           }}
         >
-          <p className={`${styles.text} ${active && styles.active}`}>
-            Portfolio
-          </p>
+          <p className={`${styles.text} `}>Portfolio</p>
         </div>
       </div>
     </>

@@ -1,0 +1,120 @@
+@import "../../../common/main.scss";
+
+.cubes {
+  animation: cubeRotate 0.8s 2.5s;
+  cursor: pointer;
+  .article {
+    display: flex;
+    .cube {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin: 2px;
+      background-color: $basicText;
+    }
+    .cube1 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.2s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube2 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.1s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube3 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.2s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    // ==========
+    .cube4 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.1s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube5 {
+      transition: 0.4s;
+      animation: cube 0.4s 2s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube6 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.1s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    // ==========
+    .cube7 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.2s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube8 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.1s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+    .cube9 {
+      transition: 0.4s;
+      animation: cube 0.4s 2.2s cubic-bezier(0.36, 0, 0.66, -0.56);
+    }
+  }
+  &:hover {
+    .cube1 {
+      transform: rotate(180deg);
+    }
+    .cube2 {
+      transform: rotate(180deg);
+    }
+    .cube3 {
+      transform: rotate(180deg);
+    }
+    // ==========
+    .cube4 {
+      transform: rotate(180deg);
+    }
+    .cube5 {
+      transform: rotate(180deg);
+    }
+    .cube6 {
+      transform: rotate(180deg);
+    }
+    // ==========
+    .cube7 {
+      transform: rotate(180deg);
+    }
+    .cube8 {
+      transform: rotate(180deg);
+    }
+    .cube9 {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes cube {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cubeRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cubehover {
+  0% {
+    transform: scale(0);
+    border-radius: 0%;
+  }
+  50% {
+    transform: scale(2);
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 0%;
+  }
+}

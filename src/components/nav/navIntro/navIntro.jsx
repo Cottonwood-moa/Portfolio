@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import styles from "./navIntro.module.scss";
 const NavIntro = ({ navigate, setIntroInfo, navRef, infoRef, setOpen }) => {
   const mouseOverEvent = () => {
@@ -8,15 +7,6 @@ const NavIntro = ({ navigate, setIntroInfo, navRef, infoRef, setOpen }) => {
   const mouseOutEvent = () => {
     setIntroInfo(false);
   };
-  const location = useLocation();
-  const [active, setActive] = useState(false);
-  useEffect(() => {
-    if (location.pathname === "/") {
-      setActive(true);
-    } else {
-      setActive(false);
-    }
-  }, [active, location.pathname]);
   return (
     <>
       <div
@@ -33,7 +23,7 @@ const NavIntro = ({ navigate, setIntroInfo, navRef, infoRef, setOpen }) => {
             navigate("/");
           }}
         >
-          <p className={`${styles.text} ${active && styles.active}`}>Intro</p>
+          <p className={`${styles.text}`}>Intro</p>
         </div>
       </div>
     </>

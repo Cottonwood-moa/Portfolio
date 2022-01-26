@@ -16,9 +16,9 @@
   font-weight: bold;
   color: $basicText;
   border-right: 0.1em solid $basicText;
-  width: 14ch;
+  width: 13ch;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 1s steps(14, end),
+  animation: typing 1s steps(13, end),
     blink-caret 0.5s step-end infinite alternate;
 }

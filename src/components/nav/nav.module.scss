@@ -21,6 +21,17 @@
   z-index: 2;
   color: $basicText;
 }
+.cubes {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  transition: 0.4s 0.8s;
+  transform: translateX(-100px);
+  animation: justTransX 0.4s 1.6s forwards;
+}
 .profile {
   position: fixed;
   left: 2rem;

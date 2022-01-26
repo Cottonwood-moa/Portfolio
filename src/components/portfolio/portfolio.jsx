@@ -8,6 +8,7 @@ import { Container } from "react-bootstrap";
 // COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import Card from "./card/card";
+// IMAGE
 import cardMaker from "../common/images/cardmaker.png";
 import movie from "../common/images/movie.png";
 import beer from "../common/images/beer.png";

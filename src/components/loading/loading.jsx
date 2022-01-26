@@ -15,7 +15,7 @@ const Loading = ({ loading, setLoading }) => {
             return prev + 1;
           }
         });
-      }, 50);
+      }, 84);
       if (percentage >= 100) {
         loadingRef.current.style.transform = "translateY(100vh)";
         let timeout = setTimeout(() => {
@@ -36,12 +36,12 @@ const Loading = ({ loading, setLoading }) => {
           <ProgressBar
             progress={percentage}
             radius={100}
-            strokeWidth={12}
-            strokeColor="#FF69B4"
+            strokeWidth={20}
+            strokeColor="#1f1f1f"
             trackStrokeWidth={4}
             pointerRadius={8}
             pointerStrokeWidth={5}
-            pointerStrokeColor="#FF69B4"
+            pointerStrokeColor="#1f1f1f"
           ></ProgressBar>
         </div>
       </div>

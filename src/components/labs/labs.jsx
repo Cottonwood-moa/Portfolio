@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import styles from "./labs.module.scss";
 import { Container } from "react-bootstrap";
 import { throttle } from "lodash";
+import Cube from "../common/cube/cube";
 const Labs = ({ loading }) => {
   const testRef = useRef();
   const getScrollTop = (e) => {
@@ -18,6 +19,7 @@ const Labs = ({ loading }) => {
         <Container>
           <div className={styles.labsContainer}>
             <span className={styles.preparing}>Preparing</span>;
+            <Cube />
           </div>
         </Container>
       )}
