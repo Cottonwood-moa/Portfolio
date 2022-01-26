@@ -4,32 +4,39 @@
   position: absolute;
   width: 100%;
 }
-.header {
-  position: absolute;
+// .header {
+//   position: absolute;
+//   z-index: 2;
+//   color: $basicText;
+//   width: 100%;
+//   padding-left: 2rem;
+//   padding-top: 2rem;
+//   padding-right: 2rem;
+.hamburger {
+  position: fixed;
+  right: 2rem;
+  top: 2rem;
+  transform: translateX(100px);
+  animation: justTransX 0.4s 1.6s forwards;
   z-index: 2;
   color: $basicText;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding-left: 2rem;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  .hamburger {
-    transform: translateX(100px);
-    animation: justTransX 0.4s 1.6s forwards;
-  }
-  .profile {
-    width: 48px;
-    height: 48px;
-    transform: translateX(-100px);
-    background: url(https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg)
-      no-repeat center center;
-    background-size: 101% 101%;
-    border-radius: 50%;
-    animation: justTransX 0.4s 1.6s forwards;
-    cursor: pointer;
-  }
 }
+.profile {
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  width: 48px;
+  height: 48px;
+  transform: translateX(-100px);
+  background: url(https://tistory3.daumcdn.net/tistory/4707383/skin/images/profile.jpg)
+    no-repeat center center;
+  background-size: 101% 101%;
+  border-radius: 50%;
+  animation: justTransX 0.4s 1.6s forwards;
+  z-index: 2;
+  cursor: pointer;
+}
+// }
 
 .nav {
   position: absolute;
