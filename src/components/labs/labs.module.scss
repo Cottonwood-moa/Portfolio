@@ -1,12 +1,21 @@
 @import "../../common/main.scss";
-.labsContainer {
-  background-color: royalblue;
-  /* 임시 */
-  height: 3000px;
-}
+
 .test {
   width: 100%;
   height: 100%;
   position: absolute;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  .labsContainer {
+    background-color: $background;
+    /* 임시 */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .preparing {
+      color: $chosenText;
+      font-size: 48px;
+      font-weight: bold;
+    }
+  }
 }

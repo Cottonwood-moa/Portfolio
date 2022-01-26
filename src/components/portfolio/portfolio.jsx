@@ -23,6 +23,7 @@ const Portfolio = ({ setNestLoading }) => {
   const location = useLocation();
   const now = new Date();
   const year = now.getFullYear();
+  const portfolioContainerRef = useRef();
   // useState
   const [progress, setProgress] = useState(false);
   // useRef
@@ -41,7 +42,7 @@ const Portfolio = ({ setNestLoading }) => {
     pageMoveRef.current.style.transform = "translateY(-20px)";
   };
   return (
-    <div className={styles.portfolioContainer}>
+    <div className={styles.portfolioContainer} ref={portfolioContainerRef}>
       {progress && <PageLoadBar />}
       <Container ref={pageMoveRef} className={styles.bootContainer}>
         <div className={styles.container}>

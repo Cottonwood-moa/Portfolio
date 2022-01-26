@@ -13,7 +13,6 @@ const ToPage = ({ nextLocation, location, setNextLocation }) => {
   const [toPage, setToPage] = useState(true);
   const [forTooltip, setForTooltip] = useState();
   useEffect(() => {
-    console.log(nextLocation);
     if (widthD < 924) {
       setToPage(false);
     }

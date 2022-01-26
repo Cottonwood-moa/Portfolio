@@ -13,7 +13,6 @@ const ReturnPage = ({ backLocation, location, setBackLocation }) => {
   const [forTooltip, setForTooltip] = useState();
   useEffect(() => {
     if (widthD < 924) {
-      console.log(window.screen.width);
       setReturnPage(false);
     }
     if (widthD >= 924) {

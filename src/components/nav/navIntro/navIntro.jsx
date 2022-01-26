@@ -27,8 +27,8 @@ const NavIntro = ({ navigate, setIntroInfo, navRef, infoRef, setOpen }) => {
         <div
           className={styles.navButton}
           onClick={() => {
-            navRef.current.style.transform = "translateX(-50vw)";
-            infoRef.current.style.transform = "translateX(50vw)";
+            navRef.current.style.transform = "translateX(-100vw)";
+            infoRef.current.style.transform = "translateX(100vw)";
             setOpen(false);
             navigate("/");
           }}

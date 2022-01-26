@@ -16,11 +16,12 @@ const Labs = ({ loading }) => {
     >
       {loading || (
         <Container>
-          <div className={styles.labsContainer}></div>
+          <div className={styles.labsContainer}>
+            <span className={styles.preparing}>Preparing</span>;
+          </div>
         </Container>
       )}
     </div>
   );
 };
-
 export default Labs;

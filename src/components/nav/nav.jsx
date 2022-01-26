@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./nav.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
+import { useWindowSize } from "@react-hook/window-size/";
 import NavIntro from "./navIntro/navIntro";
 import NavIntroInfo from "./navIntro/navIntroInfo/navIntroInfo";
 import NavLabs from "./navLabs/navLabs";
@@ -12,6 +13,9 @@ import NavContact from "./navContact/navContact";
 import NavContactInfo from "./navContact/navContactInfo/navContactInfo";
 import NavInfo from "./navInfo/navInfo";
 const Nav = ({ getNavRefs }) => {
+  // 디바운스가 적용된 실시간 size hook (쓰로틀도 있음 -> npm 참조)
+  // eslint-disable-next-line no-unused-vars
+  const [widthD, heightD] = useWindowSize();
   const navigate = new useNavigate();
   const location = new useLocation();
   const [isOpen, setOpen] = useState(false);
@@ -19,26 +23,52 @@ const Nav = ({ getNavRefs }) => {
   const [labsInfo, setLabsInfo] = useState(false);
   const [portfolioInfo, setPortfolioInfo] = useState(false);
   const [contactInfo, setContactInfo] = useState(false);
+  const [screen, setScreen] = useState(true);
   const navRef = useRef();
   const infoRef = useRef();
   const profileRef = useRef();
   const hamburgerRef = useRef();
-  useEffect(() => {
-    if (isOpen) {
-      navRef.current.style.transform = "translateX(0)";
-      infoRef.current.style.transform = "translateX(0)";
-    }
-    if (!isOpen) {
-      navRef.current.style.transform = "translateX(-50vw)";
-      infoRef.current.style.transform = "translateX(50vw)";
-    }
-  }, [isOpen]);
+  // 페이지 이동시 메뉴가 열려있다면 닫기
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
+  // 햄버거, 프로필 ref 자식 컴포넌트에서 받아오기
   useEffect(() => {
     getNavRefs(profileRef, hamburgerRef);
   }, [getNavRefs]);
+  // screen width에 따라 nav 반응형
+  useEffect(() => {
+    if (widthD < 924) {
+      setScreen(false);
+      infoRef.current.style.transform = "translateX(2000px)";
+      navRef.current.style.width = "100%";
+    }
+    if (widthD >= 924) {
+      setScreen(true);
+      infoRef.current.style.transform = "translateX(0)";
+      navRef.current.style.width = "50%";
+    }
+  }, [setScreen, widthD]);
+  // 메뉴 토글 애니메이션
+  useEffect(() => {
+    if (isOpen) {
+      navRef.current.style.transform = "translateX(0)";
+      if (!screen) {
+        infoRef.current.style.transform = "translateX(200%)";
+      } else {
+        infoRef.current.style.transform = "translateX(0)";
+      }
+    }
+    if (!isOpen) {
+      if (!screen) {
+        navRef.current.style.transform = "translateX(-200%)";
+      } else {
+        navRef.current.style.transform = "translateX(-200%)";
+      }
+      infoRef.current.style.transform = "translateX(200%)";
+    }
+  }, [isOpen, widthD, screen]);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
