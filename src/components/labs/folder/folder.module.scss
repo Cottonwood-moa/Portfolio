@@ -1,0 +1,34 @@
+@import "../../../common/main.scss";
+
+.folderContainer {
+  background-color: royalblue;
+  width: 15em;
+  height: 100%;
+  margin-right: 2em;
+  display: flex;
+  .category {
+    width: 30%;
+    height: 100%;
+    background-color: #333;
+    .article {
+      width: 100%;
+      height: 5em;
+      background-color: lavender;
+    }
+  }
+  .files {
+    width: 70%;
+    height: 100%;
+    background-color: indigo;
+    .filesHeader {
+      width: 100%;
+      height: 8%;
+      background-color: hotpink;
+    }
+    .article {
+      width: 100%;
+      height: 2em;
+      background-color: lawngreen;
+    }
+  }
+}

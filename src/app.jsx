@@ -6,6 +6,7 @@ import Labs from "./components/labs/labs";
 import Contact from "./components/contact/contact";
 import SumbitEmail from "./service/email";
 import ReadMd from "./service/readMd";
+import GetGithubFile from "./service/getGithubFile";
 import Loading from "./components/loading/loading";
 import Test from "./components/portfolio/test/test";
 import Arrow from "./components/common/arrow/arrow";
@@ -19,6 +20,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 AOS.init();
 const submitEmail = new SumbitEmail();
 const readMd = new ReadMd();
+const getGithubFile = new GetGithubFile();
 function App() {
   const location = useLocation();
   // eslint-disable-next-line no-unused-vars
@@ -105,7 +107,10 @@ function App() {
                 element={<Test readMd={readMd} file={"characterTest"} />}
               ></Route>
             </Route>
-            <Route path="/labs" element={<Labs />} />
+            <Route
+              path="/labs"
+              element={<Labs getGithubFile={getGithubFile} />}
+            />
             <Route
               path="/contact"
               element={<Contact loading={loading} submitEmail={submitEmail} />}

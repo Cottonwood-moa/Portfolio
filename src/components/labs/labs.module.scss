@@ -6,16 +6,17 @@
   position: absolute;
   // overflow-y: scroll;
   .labsContainer {
-    background-color: $background;
+    background-color: wheat;
+    display: flex;
     /* 임시 */
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .preparing {
-      color: $chosenText;
-      font-size: 48px;
-      font-weight: bold;
+    .folderContainer {
+    }
+    .infoContainer {
+      margin-right: 2em;
+    }
+    .codeContainer {
+      margin-right: 2em;
     }
   }
 }
