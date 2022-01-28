@@ -6,17 +6,13 @@
   position: absolute;
   // overflow-y: scroll;
   .labsContainer {
-    background-color: royalblue;
+    background-color: $background;
     display: flex;
     /* 임시 */
+    width: 100%;
     height: 100vh;
-    .folderContainer {
-    }
-    .infoContainer {
-      margin-right: 2em;
-    }
+    border: 2px solid $basicTheme;
     .codeContainer {
-      margin-right: 2em;
     }
   }
 }

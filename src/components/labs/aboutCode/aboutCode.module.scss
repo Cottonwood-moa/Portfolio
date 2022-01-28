@@ -3,10 +3,11 @@
   width: 20em;
   height: 36%;
   background-color: #333;
-  color: white;
+  color: $chosenText;
   margin-bottom: 2em;
+  margin-top: 2em;
   overflow-y: scroll;
-  padding: 2px;
+  padding: 10px;
   .spinnerContainer {
     width: 100%;
     height: 100%;

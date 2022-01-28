@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./folder.module.scss";
-
+import { FaAngleRight } from "react-icons/fa";
 const Folder = ({
   getGithubFile,
   setAboutCode,
@@ -10,48 +10,198 @@ const Folder = ({
   setforPackageLoading,
   setforCodeLoading,
 }) => {
+  const [forHtml, setForHtml] = useState(true);
+  const [forJs, setForJs] = useState(false);
+  const [forVue, setForVue] = useState(false);
+  const [forReact, setForReact] = useState(false);
   const getFile = async (reactBasicTemplate) => {
-    setAboutCodeLoading(true);
-    setforPackageLoading(true);
     setforCodeLoading(true);
-
-    const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
-    await setAboutCode(aboutCode);
-    setAboutCodeLoading(false);
-
-    const forPackage = await getGithubFile.getPackage(reactBasicTemplate);
-    await setforPackage(forPackage);
-    setforPackageLoading(false);
-
     const forCode = await getGithubFile.getCode(reactBasicTemplate);
     await setforCode(forCode);
     setforCodeLoading(false);
-    console.log("get 실행");
   };
   return (
     <div className={styles.folderContainer}>
       <div className={styles.category}>
-        <div className={styles.article}>1</div>
-        <div className={styles.article}>2</div>
-        <div className={styles.article}>3</div>
-        <div className={styles.article}>4</div>
-        <div className={styles.article}>5</div>
-      </div>
-      <div className={styles.files}>
-        <div className={styles.filesHeader}>Header</div>
         <div
           className={styles.article}
           onClick={() => {
-            getFile("reactBasicTemplate");
+            setForHtml(true);
+            setForJs(false);
+            setForVue(false);
+            setForReact(false);
           }}
         >
-          1
+          HTML+CSS
         </div>
-        <div className={styles.article}>2</div>
-        <div className={styles.article}>3</div>
-        <div className={styles.article}>4</div>
-        <div className={styles.article}>5</div>
-        <div className={styles.article}>6</div>
+        <div
+          className={styles.article}
+          onClick={() => {
+            setForHtml(false);
+            setForJs(true);
+            setForVue(false);
+            setForReact(false);
+          }}
+        >
+          JS
+        </div>
+        <div
+          className={styles.article}
+          onClick={() => {
+            setForHtml(false);
+            setForJs(false);
+            setForVue(true);
+            setForReact(false);
+          }}
+        >
+          Vue.js
+        </div>
+        <div
+          className={styles.article}
+          onClick={() => {
+            setForHtml(false);
+            setForJs(false);
+            setForVue(false);
+            setForReact(true);
+          }}
+        >
+          React.js
+        </div>
+      </div>
+      <div className={styles.files}>
+        <div className={styles.filesHeader}>Header</div>
+        {forHtml && (
+          <>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("reactBasicTemplate");
+              }}
+            >
+              <FaAngleRight />
+              Html 1
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              HTML 2
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              HTML 3
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              HTML 4
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              HTML 5
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              HTML 6
+            </div>
+          </>
+        )}
+        {forJs && (
+          <>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("reactBasicTemplate");
+              }}
+            >
+              <FaAngleRight />
+              JS Basic Template
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              JS 2
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              JS 3
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              JS 4
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              JS 5
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              JS 6
+            </div>
+          </>
+        )}
+        {forVue && (
+          <>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("reactBasicTemplate");
+              }}
+            >
+              <FaAngleRight />
+              Vue Basic Template
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              Vue 2
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              Vue 3
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              Vue 4
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              Vue 5
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              Vue 6
+            </div>
+          </>
+        )}
+        {forReact && (
+          <>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("reactBasicTemplate");
+              }}
+            >
+              <FaAngleRight />
+              React Basic Template
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              React 2
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              React 3
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              React 4
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              React 5
+            </div>
+            <div className={styles.article}>
+              <FaAngleRight />
+              React 6
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
