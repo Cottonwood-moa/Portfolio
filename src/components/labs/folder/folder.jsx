@@ -15,14 +15,12 @@ const Folder = ({
   const getFile = async (reactBasicTemplate) => {
     setforCodeLoading(true);
     setAboutCodeLoading(true);
-
-    const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
-    await setAboutCode(aboutCode);
-    setAboutCodeLoading(false);
-
     const forCode = await getGithubFile.getCode(reactBasicTemplate);
     await setforCode(forCode);
-    setforCodeLoading(false);
+    await setforCodeLoading(false);
+    const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
+    await setAboutCode(aboutCode);
+    await setAboutCodeLoading(false);
   };
   return (
     <div className={styles.folderContainer}>
@@ -83,7 +81,7 @@ const Folder = ({
               }}
             >
               <FaAngleRight />
-              Html 1
+              flip over
             </div>
             <div
               className={styles.article}
@@ -92,7 +90,7 @@ const Folder = ({
               }}
             >
               <FaAngleRight />
-              HTML 2
+              inserting video
             </div>
             <div className={styles.article}>
               <FaAngleRight />
