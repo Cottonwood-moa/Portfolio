@@ -110,9 +110,14 @@ const Folder = ({
               <FaAngleRight />
               cssPriority
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("htmlMiddle");
+              }}
+            >
               <FaAngleRight />
-              HTML 5
+              alignCenter
             </div>
             <div className={styles.article}>
               <FaAngleRight />
