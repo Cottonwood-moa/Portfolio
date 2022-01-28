@@ -99,11 +99,16 @@ const Folder = ({
               }}
             >
               <FaAngleRight />
-              mixin
+              focus
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("cssPriority");
+              }}
+            >
               <FaAngleRight />
-              HTML 4
+              cssPriority
             </div>
             <div className={styles.article}>
               <FaAngleRight />
