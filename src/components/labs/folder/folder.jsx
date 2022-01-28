@@ -130,11 +130,11 @@ const Folder = ({
             <div
               className={styles.article}
               onClick={() => {
-                getFile("reactBasicTemplate");
+                getFile("promise");
               }}
             >
               <FaAngleRight />
-              JS Basic Template
+              Promise
             </div>
             <div className={styles.article}>
               <FaAngleRight />

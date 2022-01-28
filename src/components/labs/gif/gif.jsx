@@ -15,7 +15,7 @@ const Gif = ({ aboutCode, aboutCodeLoading }) => {
       setForToggle(true);
     }
     if (forToggle) {
-      previewRef.current.style.transform = "translateX(49em)";
+      previewRef.current.style.transform = "translateX(47em)";
       setForToggle(false);
     }
   };

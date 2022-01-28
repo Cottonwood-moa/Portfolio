@@ -7,7 +7,7 @@
   right: 0;
   transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   transform-origin: right;
-  transform: translateX(49em);
+  transform: translateX(47em);
   .gifContainer {
     width: 100%;
     height: 100%;
@@ -37,5 +37,11 @@
     left: 0;
     margin: auto;
     cursor: pointer;
+    transition: 0.2s;
+    transform: scaleX(1.5);
+    transform-origin: right;
+    &:hover {
+      transform: scaleX(2);
+    }
   }
 }
