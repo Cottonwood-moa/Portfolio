@@ -1,7 +1,17 @@
 import React from "react";
+
 import styles from "./aboutCode.module.scss";
 
-const AboutCode = (props) => {
-  return <div className={styles.aboutCodeContainer}>AboutCode</div>;
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+const AboutCode = ({ aboutCode }) => {
+  return (
+    <div className={styles.aboutCodeContainer}>
+      <ReactMarkdown
+        children={aboutCode}
+        remarkPlugins={[remarkGfm]}
+      ></ReactMarkdown>
+    </div>
+  );
 };
 export default AboutCode;
