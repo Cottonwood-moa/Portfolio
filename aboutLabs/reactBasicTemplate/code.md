@@ -1,4 +1,3 @@
-React basic template
 ```js
 import React, { useEffect } from "react";
 import styles from "./folder.module.scss";
