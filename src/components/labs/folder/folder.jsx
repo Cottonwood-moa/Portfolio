@@ -79,7 +79,7 @@ const Folder = ({
             <div
               className={styles.article}
               onClick={() => {
-                getFile("reactBasicTemplate");
+                getFile("htmlHoverRotate");
               }}
             >
               <FaAngleRight />
