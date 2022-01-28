@@ -85,7 +85,12 @@ const Folder = ({
               <FaAngleRight />
               Html 1
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("htmlInsertVideo");
+              }}
+            >
               <FaAngleRight />
               HTML 2
             </div>
