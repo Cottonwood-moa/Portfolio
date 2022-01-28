@@ -92,9 +92,14 @@ const Folder = ({
               <FaAngleRight />
               inserting video
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("htmlMIxin");
+              }}
+            >
               <FaAngleRight />
-              HTML 3
+              mixin
             </div>
             <div className={styles.article}>
               <FaAngleRight />
