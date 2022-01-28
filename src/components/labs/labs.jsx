@@ -8,6 +8,9 @@ import Code from "./code/code";
 const Labs = ({ loading, getGithubFile }) => {
   const [forCode, setforCode] = useState();
   const [forCodeLoading, setforCodeLoading] = useState(false);
+  const [aboutCode, setAboutCode] = useState();
+  const [aboutCodeLoading, setAboutCodeLoading] = useState(false);
+
   const testRef = useRef();
   // const getScrollTop = (e) => {
   //   const { scrollTop } = e.target;
@@ -27,9 +30,12 @@ const Labs = ({ loading, getGithubFile }) => {
                 getGithubFile={getGithubFile}
                 setforCode={setforCode}
                 setforCodeLoading={setforCodeLoading}
+                setAboutCode={setAboutCode}
+                setAboutCodeLoading={setAboutCodeLoading}
               />
             </div>
             <Code forCode={forCode} forCodeLoading={forCodeLoading} />
+            <Gif aboutCode={aboutCode} aboutCodeLoading={aboutCodeLoading} />
           </div>
         </Container>
       )}

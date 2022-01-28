@@ -4,10 +4,8 @@ import { FaAngleRight } from "react-icons/fa";
 const Folder = ({
   getGithubFile,
   setAboutCode,
-  setforPackage,
   setforCode,
   setAboutCodeLoading,
-  setforPackageLoading,
   setforCodeLoading,
 }) => {
   const [forHtml, setForHtml] = useState(true);
@@ -16,6 +14,12 @@ const Folder = ({
   const [forReact, setForReact] = useState(false);
   const getFile = async (reactBasicTemplate) => {
     setforCodeLoading(true);
+    setAboutCodeLoading(true);
+
+    const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
+    await setAboutCode(aboutCode);
+    setAboutCodeLoading(false);
+
     const forCode = await getGithubFile.getCode(reactBasicTemplate);
     await setforCode(forCode);
     setforCodeLoading(false);
