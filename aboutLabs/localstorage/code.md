@@ -1,3 +1,5 @@
+Javascript
+
 ```js
 $(function () {
   const useStorage = $("#yourContent");
