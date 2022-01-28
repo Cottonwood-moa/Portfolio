@@ -136,13 +136,23 @@ const Folder = ({
               <FaAngleRight />
               Promise
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("localstorage");
+              }}
+            >
               <FaAngleRight />
-              JS 2
+              localstorage
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("AJAX");
+              }}
+            >
               <FaAngleRight />
-              JS 3
+              AJAX
             </div>
             <div className={styles.article}>
               <FaAngleRight />
