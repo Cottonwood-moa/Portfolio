@@ -163,9 +163,14 @@ const Folder = ({
               <FaAngleRight />
               hoisting
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("copy");
+              }}
+            >
               <FaAngleRight />
-              JS 5
+              copy
             </div>
             <div className={styles.article}>
               <FaAngleRight />
