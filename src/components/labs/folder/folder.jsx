@@ -154,9 +154,14 @@ const Folder = ({
               <FaAngleRight />
               AJAX
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("hoisting");
+              }}
+            >
               <FaAngleRight />
-              JS 4
+              hoisting
             </div>
             <div className={styles.article}>
               <FaAngleRight />
