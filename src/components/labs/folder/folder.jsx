@@ -1,13 +1,31 @@
 import React, { useEffect } from "react";
 import styles from "./folder.module.scss";
 
-const Folder = ({ getGithubFile, setAboutCode, setforPackage }) => {
+const Folder = ({
+  getGithubFile,
+  setAboutCode,
+  setforPackage,
+  setforCode,
+  setAboutCodeLoading,
+  setforPackageLoading,
+  setforCodeLoading,
+}) => {
   const getFile = async (reactBasicTemplate) => {
+    setAboutCodeLoading(true);
+    setforPackageLoading(true);
+    setforCodeLoading(true);
+
     const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
-    const forPackage = await getGithubFile.getPackage(reactBasicTemplate);
-    // const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
     await setAboutCode(aboutCode);
+    setAboutCodeLoading(false);
+
+    const forPackage = await getGithubFile.getPackage(reactBasicTemplate);
     await setforPackage(forPackage);
+    setforPackageLoading(false);
+
+    const forCode = await getGithubFile.getCode(reactBasicTemplate);
+    await setforCode(forCode);
+    setforCodeLoading(false);
     console.log("get 실행");
   };
   return (

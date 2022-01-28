@@ -11,6 +11,10 @@ import AboutCode from "./aboutCode/aboutCode";
 const Labs = ({ loading, getGithubFile }) => {
   const [aboutCode, setAboutCode] = useState();
   const [forPackage, setforPackage] = useState();
+  const [forCode, setforCode] = useState();
+  const [aboutCodeLoading, setAboutCodeLoading] = useState(false);
+  const [forPackageLoading, setforPackageLoading] = useState(false);
+  const [forCodeLoading, setforCodeLoading] = useState(false);
   const testRef = useRef();
   // const getScrollTop = (e) => {
   //   const { scrollTop } = e.target;
@@ -33,16 +37,26 @@ const Labs = ({ loading, getGithubFile }) => {
                 getGithubFile={getGithubFile}
                 setAboutCode={setAboutCode}
                 setforPackage={setforPackage}
+                setforCode={setforCode}
+                setAboutCodeLoading={setAboutCodeLoading}
+                setforPackageLoading={setforPackageLoading}
+                setforCodeLoading={setforCodeLoading}
               />
             </div>
             <div className={styles.infoContainer}>
               <Gif />
-              <AboutCode aboutCode={aboutCode} />
-              <Dependency forPackage={forPackage} />
+              <AboutCode
+                aboutCode={aboutCode}
+                aboutCodeLoading={aboutCodeLoading}
+              />
+              <Dependency
+                forPackage={forPackage}
+                forPackageLoading={forPackageLoading}
+              />
             </div>
             <div className={styles.codeContainer}>
               <Links />
-              <Code />
+              <Code forCode={forCode} forCodeLoading={forCodeLoading} />
             </div>
           </div>
         </Container>

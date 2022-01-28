@@ -4,9 +4,15 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
-const Dependency = ({ forPackage }) => {
+import Spinner from "../../common/spinner/spinner";
+const Dependency = ({ forPackage, forPackageLoading }) => {
   return (
     <div className={styles.dependencyContainer}>
+      {forPackageLoading && (
+        <div className={styles.spinnerContainer}>
+          <Spinner />
+        </div>
+      )}
       <ReactMarkdown
         children={forPackage}
         remarkPlugins={[remarkGfm]}

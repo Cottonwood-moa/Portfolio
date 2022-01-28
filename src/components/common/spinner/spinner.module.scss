@@ -1,0 +1,19 @@
+@import "../../../common/main.scss";
+.spinner {
+  width: 5em;
+  height: 5em;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 10px solid $chosenText;
+  border-top: 10px solid $background;
+  animation: spinner 1s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

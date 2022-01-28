@@ -1,5 +1,34 @@
+@import "../../../common/main.scss";
 .codeContainer {
-  width: 30em;
-  height: 80%;
-  background-color: yellow;
+  width: 40em;
+  height: 85%;
+  background-color: $background;
+  overflow-y: auto;
+  .spinnerContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
