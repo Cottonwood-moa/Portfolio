@@ -1,3 +1,5 @@
+![image](https://user-images.githubusercontent.com/79053495/151560346-7964c438-099f-4874-b048-e3a390c1ecfc.png)
+
 # CSS 요소 중앙배치, img 태그 아래 공백
 
 - 부모요소의 `position`이 정의되어 있어야 한다.
