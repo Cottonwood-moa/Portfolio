@@ -247,9 +247,14 @@ const Folder = ({
               <FaAngleRight />
               Form binding
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("vuex");
+              }}
+            >
               <FaAngleRight />
-              Vue 6
+              vuex
             </div>
           </>
         )}
