@@ -1,6 +1,6 @@
 App.js
 
-```vue
+```js
 <template>
   <h1>{{ count }}</h1>
 </template>
