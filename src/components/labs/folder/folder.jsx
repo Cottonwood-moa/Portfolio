@@ -238,9 +238,14 @@ const Folder = ({
               <FaAngleRight />
               Router
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("form");
+              }}
+            >
               <FaAngleRight />
-              Vue 5
+              Form binding
             </div>
             <div className={styles.article}>
               <FaAngleRight />
