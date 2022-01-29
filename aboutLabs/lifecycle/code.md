@@ -1,10 +1,12 @@
 App.js
 
-```js
+```HTML
 <template>
   <h1>{{ count }}</h1>
 </template>
+```
 
+```js
 <script>
 export default {
   data() {
