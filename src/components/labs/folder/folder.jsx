@@ -220,9 +220,14 @@ const Folder = ({
               <FaAngleRight />
               Provide/Inject
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("composition");
+              }}
+            >
               <FaAngleRight />
-              Vue 3
+              compositionAPI
             </div>
             <div className={styles.article}>
               <FaAngleRight />
