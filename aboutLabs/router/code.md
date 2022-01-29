@@ -1,8 +1,8 @@
+프로젝트에 vue 라우터를 설치한다.
+
 ```bash
 npm install vue-router@4
 ```
-
-프로젝트에 vue 라우터를 설치한다.
 
 main.js 구성
 
