@@ -205,11 +205,11 @@ const Folder = ({
             <div
               className={styles.article}
               onClick={() => {
-                getFile("reactBasicTemplate");
+                getFile("lifecycle");
               }}
             >
               <FaAngleRight />
-              Vue Basic Template
+              LifeCycle
             </div>
             <div className={styles.article}>
               <FaAngleRight />
