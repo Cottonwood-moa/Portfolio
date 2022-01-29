@@ -1,17 +1,61 @@
-App에 있는 데이터를 Child컴포넌트에 전달하는 방법이다.
+```html
+<template>
+  <button @click="msg = 'changed!'">change</button>
+  <h1>App: {{ msg }}</h1>
+  <Parent />
+</template>
+```
 
-보통 자식 컴포넌트에서 부모 컴포넌트로 넘어가는 것이 일반적인 경우고
+```js
+<script>
+import Parent from '~/components/ParentCP'
+import { computed } from 'vue'
+export default {
+    components:{
+    Parent,
+  },
+  data(){
+    return{
+      msg:'반갑습니다.'
+  }
+},
+  provide(){
+    return{
+      msg:computed(()=>{
+        return this.msg
+      })
+    }
+  }
+}
+</script>
+```
 
-반대인 경우에는 props를 사용하였다.
+Parent
 
-props는 바로 아래에 있는 자식 컴포넌트에 데이터를 내려주는데
+```html
+<template>
+  <Child />
+</template>
+```
 
-Provide/Inject 옵션을 통해서 데이터를 정의해서
+```js
+<script>
+import Child from '~/components/ChildCP'
 
-특정한 하위 요소로 빠르게 데이터를 전달할 수 있다.
+export default {
+  components:{
+    Child
+  },
+}
+</script>
+// Child Component
+<template>
+  <span>Child: {{ msg.value }}</span>
+</template>
 
-다만, 이렇게 데이터를 전달하면 props와는 다르게 반응성을 잃게 되는데
-
-이 문제를 해결하기 위해 computed를 활용한다.
-
-[Provide&Inject](https://v3.ko.vuejs.org/guide/component-provide-inject.html)
+<script>
+export default {
+  inject:['msg']
+}
+</script>
+```

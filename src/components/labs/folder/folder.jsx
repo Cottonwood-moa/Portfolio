@@ -211,9 +211,14 @@ const Folder = ({
               <FaAngleRight />
               LifeCycle
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("provide");
+              }}
+            >
               <FaAngleRight />
-              Vue 2
+              Provide/Inject
             </div>
             <div className={styles.article}>
               <FaAngleRight />
