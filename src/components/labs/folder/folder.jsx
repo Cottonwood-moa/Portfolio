@@ -229,9 +229,14 @@ const Folder = ({
               <FaAngleRight />
               compositionAPI
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("router");
+              }}
+            >
               <FaAngleRight />
-              Vue 4
+              Router
             </div>
             <div className={styles.article}>
               <FaAngleRight />
