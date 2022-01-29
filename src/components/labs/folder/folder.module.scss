@@ -30,8 +30,11 @@
       width: 100%;
       height: 8%;
       background-color: $basicTheme;
-      color: white;
+      color: $chosenText;
       border-bottom: 2px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .article {
       width: 100%;

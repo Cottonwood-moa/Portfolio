@@ -12,6 +12,7 @@ const Folder = ({
   const [forJs, setForJs] = useState(false);
   const [forVue, setForVue] = useState(false);
   const [forReact, setForReact] = useState(false);
+  const [header, setHeader] = useState();
   const getFile = async (reactBasicTemplate) => {
     setforCodeLoading(true);
     setAboutCodeLoading(true);
@@ -22,6 +23,20 @@ const Folder = ({
     await setAboutCode(aboutCode);
     await setAboutCodeLoading(false);
   };
+  useEffect(() => {
+    if (forHtml) {
+      setHeader("HTML+CSS");
+    }
+    if (forJs) {
+      setHeader("Javascript");
+    }
+    if (forVue) {
+      setHeader("Vue.js");
+    }
+    if (forReact) {
+      setHeader("React.js");
+    }
+  }, [setHeader, forHtml, forJs, forVue, forReact]);
   return (
     <div className={styles.folderContainer}>
       <div className={styles.category}>
@@ -71,7 +86,9 @@ const Folder = ({
         </div>
       </div>
       <div className={styles.files}>
-        <div className={styles.filesHeader}>Header</div>
+        <div className={styles.filesHeader}>
+          <div>{header}</div>
+        </div>
         {forHtml && (
           <>
             <div
@@ -172,9 +189,14 @@ const Folder = ({
               <FaAngleRight />
               copy
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              onClick={() => {
+                getFile("class");
+              }}
+            >
               <FaAngleRight />
-              JS 6
+              class
             </div>
           </>
         )}
