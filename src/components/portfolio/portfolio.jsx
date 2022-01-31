@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./portfolio.module.scss";
 import { Container } from "react-bootstrap";
 // PLUG IN
+
 // COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import Card from "./card/card";

@@ -3,13 +3,13 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  background-color: $background;
 }
 .introContainer {
   background-color: $background;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 .title {
@@ -158,7 +158,6 @@
 .image {
   width: 16em;
   height: 16em;
-  background-color: white;
   border-radius: 50%;
   margin: 3em;
   opacity: 0;
@@ -166,7 +165,6 @@
   animation: ironMan 0.5s 2.6s forwards;
   background: url(https://avatars.githubusercontent.com/u/79053495?v=4)
     no-repeat center center;
-  background-color: white;
   background-size: 101%;
   cursor: url("../common/images/heart.png"), auto;
 }
@@ -235,4 +233,17 @@
 //
 .arrow {
   transition: 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+//
+.secondSection {
+  width: 100%;
+  height: 1200px;
+  background-color: rosybrown;
+  color: white;
+}
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: red;
 }

@@ -53,7 +53,7 @@ const Nav = ({ getNavRefs }) => {
     setOpen(false);
   }, [location.pathname]);
 
-  // 햄버거, 프로필 ref 자식 컴포넌트에서 올려주기
+  // to app.jsx
   useEffect(() => {
     getNavRefs(leftThingRef, hamburgerRef);
   }, [getNavRefs]);

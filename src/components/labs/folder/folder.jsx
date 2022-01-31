@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./folder.module.scss";
 import { FaAngleRight } from "react-icons/fa";
 const Folder = ({
@@ -13,7 +13,15 @@ const Folder = ({
   const [forVue, setForVue] = useState(false);
   const [forReact, setForReact] = useState(false);
   const [header, setHeader] = useState();
-  const getFile = async (reactBasicTemplate) => {
+  const chosenRef = useRef([]);
+  const [lastRef, setLastRef] = useState();
+  const getFile = async (reactBasicTemplate, num) => {
+    if (lastRef) {
+      lastRef.style.background = "#2a2a2a";
+    }
+    chosenRef.current[num].style.background = "#494949";
+    setLastRef(chosenRef.current[num]);
+
     setforCodeLoading(true);
     setAboutCodeLoading(true);
     const forCode = await getGithubFile.getCode(reactBasicTemplate);
@@ -23,6 +31,9 @@ const Folder = ({
     await setAboutCode(aboutCode);
     await setAboutCodeLoading(false);
   };
+  useEffect(() => {
+    getFile("htmlHoverRotate", 0);
+  }, []);
   useEffect(() => {
     if (forHtml) {
       setHeader("HTML+CSS");
@@ -93,8 +104,9 @@ const Folder = ({
           <>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[0] = r)}
               onClick={() => {
-                getFile("htmlHoverRotate");
+                getFile("htmlHoverRotate", 0);
               }}
             >
               <FaAngleRight />
@@ -102,8 +114,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[1] = r)}
               onClick={() => {
-                getFile("htmlInsertVideo");
+                getFile("htmlInsertVideo", 1);
               }}
             >
               <FaAngleRight />
@@ -111,8 +124,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[2] = r)}
               onClick={() => {
-                getFile("htmlMIxin");
+                getFile("htmlMIxin", 2);
               }}
             >
               <FaAngleRight />
@@ -120,8 +134,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[3] = r)}
               onClick={() => {
-                getFile("cssPriority");
+                getFile("cssPriority", 3);
               }}
             >
               <FaAngleRight />
@@ -129,8 +144,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[4] = r)}
               onClick={() => {
-                getFile("htmlMiddle");
+                getFile("htmlMiddle", 4);
               }}
             >
               <FaAngleRight />
@@ -146,8 +162,9 @@ const Folder = ({
           <>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[5] = r)}
               onClick={() => {
-                getFile("promise");
+                getFile("promise", 5);
               }}
             >
               <FaAngleRight />
@@ -155,8 +172,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[6] = r)}
               onClick={() => {
-                getFile("localstorage");
+                getFile("localstorage", 6);
               }}
             >
               <FaAngleRight />
@@ -164,8 +182,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[7] = r)}
               onClick={() => {
-                getFile("AJAX");
+                getFile("AJAX", 7);
               }}
             >
               <FaAngleRight />
@@ -173,8 +192,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[8] = r)}
               onClick={() => {
-                getFile("hoisting");
+                getFile("hoisting", 8);
               }}
             >
               <FaAngleRight />
@@ -182,8 +202,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[9] = r)}
               onClick={() => {
-                getFile("copy");
+                getFile("copy", 9);
               }}
             >
               <FaAngleRight />
@@ -191,8 +212,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[10] = r)}
               onClick={() => {
-                getFile("class");
+                getFile("class", 10);
               }}
             >
               <FaAngleRight />
@@ -204,8 +226,9 @@ const Folder = ({
           <>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[11] = r)}
               onClick={() => {
-                getFile("lifecycle");
+                getFile("lifecycle", 11);
               }}
             >
               <FaAngleRight />
@@ -213,8 +236,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[12] = r)}
               onClick={() => {
-                getFile("provide");
+                getFile("provide", 12);
               }}
             >
               <FaAngleRight />
@@ -222,8 +246,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[13] = r)}
               onClick={() => {
-                getFile("composition");
+                getFile("composition", 13);
               }}
             >
               <FaAngleRight />
@@ -231,8 +256,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[14] = r)}
               onClick={() => {
-                getFile("router");
+                getFile("router", 14);
               }}
             >
               <FaAngleRight />
@@ -240,8 +266,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[15] = r)}
               onClick={() => {
-                getFile("form");
+                getFile("form", 15);
               }}
             >
               <FaAngleRight />
@@ -249,8 +276,9 @@ const Folder = ({
             </div>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[16] = r)}
               onClick={() => {
-                getFile("vuex");
+                getFile("vuex", 16);
               }}
             >
               <FaAngleRight />
@@ -262,8 +290,9 @@ const Folder = ({
           <>
             <div
               className={styles.article}
+              ref={(r) => (chosenRef.current[17] = r)}
               onClick={() => {
-                getFile("reactBasicTemplate");
+                getFile("reactBasicTemplate", 17);
               }}
             >
               <FaAngleRight />

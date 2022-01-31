@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import "./app.scss";
+// COMPONENTS
 import Intro from "./components/intro/intro";
 import Portfolio from "./components/portfolio/portfolio";
 import Labs from "./components/labs/labs";
@@ -12,12 +15,11 @@ import Test from "./components/portfolio/test/test";
 import Arrow from "./components/common/arrow/arrow";
 import NestedLoading from "./components/common/nestedLoading/nestedLoading";
 import Nav from "./components/nav/nav";
-import "./app.scss";
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-// ..
-AOS.init();
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+// Service logic
 const submitEmail = new SumbitEmail();
 const readMd = new ReadMd();
 const getGithubFile = new GetGithubFile();
@@ -26,7 +28,7 @@ function App() {
   // eslint-disable-next-line no-unused-vars
   const [transitionName, setTransitionName] = useState("alert");
   const [loading, setLoading] = useState(true);
-  const [forNav, setforNav] = useState(false);
+  const [forNav, setforNav] = useState(true);
   const [nestLoading, setNestLoading] = useState(false);
   const navRefs = useRef([]);
 
@@ -35,24 +37,26 @@ function App() {
     navRefs.current[1] = hamburgerRef;
   };
   useEffect(() => {
+    // console.log("profile:", navRefs.current[0].current);
+    // console.log("hamburger:", navRefs.current[1].current);
+    // console.log(["location.pathname", location.pathname]);
     if (location.pathname.includes("/portfolio/")) {
       setNestLoading(true);
     }
-    if (forNav) {
-      navRefs.current[0].current.style.transform = "translateX(-100px)";
-      navRefs.current[1].current.style.transform = "translateX(100px)";
-      setTimeout(() => {
-        setforNav(false);
-        setforNav(true);
-      }, 1200);
-    }
-    setforNav(true);
+    navRefs.current[0].current.style.transform = "translateX(-100px)";
+    navRefs.current[1].current.style.transform = "translateX(100px)";
+    setTimeout(() => {
+      setforNav(false);
+      setforNav(true);
+    }, 1600);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
+  useEffect(() => {}, [forNav]);
   return (
     <React.Fragment>
       <Loading loading={loading} setLoading={setLoading} />
-      {forNav && <Nav getNavRefs={getNavRefs} />}
+
       <TransitionGroup>
         <CSSTransition
           key={location.pathname}
@@ -60,7 +64,7 @@ function App() {
           timeout={1600}
         >
           <Routes location={location}>
-            <Route path="/" element={<Intro />} />
+            <Route path="/" element={<Intro readMd={readMd} />} />
             <Route path="/portfolio" element={<Outlet />}>
               <Route
                 index
@@ -120,6 +124,7 @@ function App() {
         </CSSTransition>
       </TransitionGroup>
       <Arrow location={location.pathname} />
+      {forNav && <Nav getNavRefs={getNavRefs} />}
       {nestLoading && (
         <NestedLoading
           nestLoading={nestLoading}

@@ -4,6 +4,7 @@
   width: 15em;
   height: 100%;
   display: flex;
+
   .category {
     width: 30%;
     height: 100%;
@@ -43,7 +44,8 @@
       color: $chosenText;
       cursor: pointer;
       &:hover {
-        background-color: #494949;
+        // background-color: #494949;
+        color: white;
       }
     }
   }

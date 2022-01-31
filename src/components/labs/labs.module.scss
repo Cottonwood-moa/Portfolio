@@ -1,9 +1,15 @@
 @import "../../common/main.scss";
-
+.forShow {
+  transform-origin: top;
+  opacity: 0;
+  animation: justOpacity 0.4s 1.6s forwards;
+}
 .test {
   width: 100%;
   height: 100%;
   position: absolute;
+  transform-origin: center;
+  transition: 0.4s 0.8s;
   // overflow-y: scroll;
   .labsContainer {
     background-color: $background;

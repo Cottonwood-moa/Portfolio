@@ -13,15 +13,9 @@ const NavIntroInfo = (props) => {
       </h1>
       <div className={styles.thumb} ref={thumbRef}></div>
       <div className={styles.info}>
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="1500">
-          Hi, there!
-        </div>
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="2000">
-          It shows who I am , what I study
-        </div>
-        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="2500">
-          and what skill stack I have.
-        </div>
+        <div>Hi, there!</div>
+        <div>It shows who I am , what I study</div>
+        <div>and what skill stack I have.</div>
       </div>
     </div>
   );

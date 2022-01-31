@@ -5,6 +5,7 @@ import { Container, Form } from "react-bootstrap";
 // eslint-disable-next-line no-unused-vars
 import { useLocation, useNavigate } from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
+
 const Contact = ({ submitEmail, loading }) => {
   const emailRef = useRef();
   const nameRef = useRef();
