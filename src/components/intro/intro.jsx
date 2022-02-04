@@ -32,6 +32,7 @@ const Intro = ({ readMd }) => {
   // function
   const anotherPage = (pageName) => {
     setProgress(true);
+    window.scrollTo(0, 0);
     // eslint-disable-next-line array-callback-return
     pageMoveRefs.current.map((item) => {
       item.style.transform = "translateY(-10vh)";
@@ -53,14 +54,48 @@ const Intro = ({ readMd }) => {
   }, [location.pathname]);
   return (
     <div className={`${styles.forRouteTransition} introScroller`}>
+      <Tween
+        from={{
+          x: "-100px",
+          scrollTrigger: {
+            trigger: ".secondSectionTrigger",
+            start: "0px center",
+            end: "200px center",
+            scrub: 1,
+          },
+        }}
+        stagger={0.2}
+      >
+        <div className={`${styles.leftThingFollow} leftThingFollowTrigger`}>
+          <a
+            href="https://github.com/Cottonwood-moa"
+            className={styles.article1}
+            data-tip
+            data-for="githubTip"
+          ></a>
+          <a
+            href="https://cottonwood-moa.tistory.com/"
+            className={styles.article2}
+            data-tip
+            data-for="blogTip"
+          ></a>
+          <a
+            href="https://codepen.io/Cottonwood"
+            className={styles.article3}
+            data-tip
+            data-for="codepenTip"
+          ></a>
+          <div className={styles.article4} data-tip data-for="phoneTip"></div>
+        </div>
+      </Tween>
       {progress && <PageLoadBar />}
-      <div className={styles.introContainer}>
+      <div
+        className={styles.introContainer}
+        ref={(e) => (pageMoveRefs.current[0] = e)}
+      >
         <Container>
           <div className={styles.firstSection}>
-            <div
-              className={styles.title}
-              ref={(e) => (pageMoveRefs.current[0] = e)}
-            >
+            <div className={styles.title}>
               {titleArray.map((item, index) => {
                 const el = "textElement" + index;
                 return (
@@ -71,10 +106,7 @@ const Intro = ({ readMd }) => {
               })}
             </div>
 
-            <div
-              className={styles.follows}
-              ref={(e) => (pageMoveRefs.current[1] = e)}
-            >
+            <div className={styles.follows}>
               {follow && (
                 <>
                   <ReactTooltip id="codepenTip" type="error" effect="float">
@@ -120,10 +152,7 @@ const Intro = ({ readMd }) => {
                 </>
               )}
             </div>
-            <div
-              className={styles.info}
-              ref={(e) => (pageMoveRefs.current[2] = e)}
-            >
+            <div className={styles.info}>
               <h1>Hello, my name is Geonwoo Park.</h1>
               <div>
                 I am front-end web developer and confident in UI/UX javascript.
@@ -175,10 +204,7 @@ const Intro = ({ readMd }) => {
             </div>
           </div>
           {/* ========================================================= */}
-          <div
-            className={styles.secondSection}
-            ref={(e) => (pageMoveRefs.current[3] = e)}
-          >
+          <div className={`${styles.secondSection} secondSectionTrigger`}>
             <Tween
               from={{
                 x: "-1000px",
@@ -186,9 +212,9 @@ const Intro = ({ readMd }) => {
                 scrollTrigger: {
                   // scroller: ".introScroller",
                   trigger: ".doit",
-                  start: "-200px center",
-                  end: "200px center",
-                  scrub: 0.5,
+                  start: "top center",
+                  end: "bottom center",
+                  scrub: 1,
                 },
               }}
               stagger={0.2}
@@ -212,7 +238,7 @@ const Intro = ({ readMd }) => {
                   trigger: ".boxTrigger",
                   start: "-200px center",
                   end: "1200px center",
-                  scrub: 0.5,
+                  scrub: 1,
                 },
               }}
               stagger={0.2}
@@ -277,10 +303,7 @@ const Intro = ({ readMd }) => {
               <div className={`${styles.des2} uiux`}>I do UI/UX, REST API</div>
             </Tween>
           </div>
-          <div
-            className={styles.thirdSectionFortransition}
-            ref={(e) => (pageMoveRefs.current[4] = e)}
-          >
+          <div className={styles.thirdSectionFortransition}>
             <div
               className={`${styles.thirdSection} thirdSectionContainerTrigger`}
             >
@@ -295,7 +318,6 @@ const Intro = ({ readMd }) => {
                     scrub: 1,
                   },
                 }}
-                duration={2}
               >
                 <span className={`${styles.text} textTrigger`}>
                   What is my Skills?
@@ -303,7 +325,7 @@ const Intro = ({ readMd }) => {
               </Tween>
               <Tween
                 to={{
-                  x: "-2800px",
+                  x: "-150vw",
                   scrollTrigger: {
                     // scroller: ".introScroller",
                     start: "top top",
@@ -318,13 +340,13 @@ const Intro = ({ readMd }) => {
                 <div className={styles.square}>
                   <Tween
                     to={{
-                      x: "3800px",
+                      x: "210vw",
                       opacity: 1,
                       scrollTrigger: {
                         // scroller: ".introScroller",
-                        trigger: ".groundTrigger",
-                        start: "0px center",
-                        end: "4000px center",
+                        trigger: ".thirdSectionContainerTrigger",
+                        start: "top top",
+                        end: "+=500%",
                         scrub: 1,
                       },
                     }}
@@ -371,22 +393,19 @@ const Intro = ({ readMd }) => {
               </Tween>
             </div>
           </div>
-          <div
-            className={`${styles.fourthSection} fourthSectionTrigger`}
-            ref={(e) => (pageMoveRefs.current[5] = e)}
-          >
+          <div className={`${styles.fourthSection} fourthSectionTrigger`}>
             <div>
               <Tween
                 from={{
                   x: "2000px",
-                  y: "2000px",
+                  y: "100px",
                   rotate: 360,
                   scale: 0,
                   fontSize: 0,
                   scrollTrigger: {
                     // scroller: ".introScroller",
                     trigger: ".fourthSectionTrigger",
-                    start: "-200px center",
+                    start: "0px center",
                     end: "200px center",
                     scrub: 1,
                   },

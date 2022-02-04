@@ -4,7 +4,46 @@
   width: 100%;
   height: 100%;
   background-color: $background;
+  transition: 0.8s 0.8s;
   // overflow-y: scroll;
+  .leftThingFollow {
+    position: fixed;
+    left: 0;
+    top: 10rem;
+    z-index: 2;
+    .article1 {
+      display: block;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url("../common/images/github.png") no-repeat center center;
+      background-color: wheat;
+      background-size: 80%;
+      transition: 0.2s;
+    }
+    .article2 {
+      display: block;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url("../common/images/blog.png") no-repeat center center;
+      background-color: skyblue;
+      background-size: 80%;
+    }
+    .article3 {
+      display: block;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url("../common/images/codepen.png") no-repeat center center;
+      background-color: tomato;
+      background-size: 80%;
+    }
+    .article4 {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: url("../common/images/phone.png") no-repeat center center;
+      background-color: cornflowerblue;
+      background-size: 80%;
+    }
+  }
 }
 .introContainer {
   background-color: $background;
@@ -12,6 +51,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: 0.8s 0.8s;
 }
 .firstSection {
   height: 100vh;
@@ -383,6 +423,7 @@
   .text {
     font-size: 56px;
     color: $basicText;
+    text-align: center;
   }
   .square {
     position: relative;
@@ -403,7 +444,7 @@
   .html {
     width: 100px;
     height: 100px;
-    transform: translateX(2000px);
+    transform: translateX(110vw);
     background: url(https://tistory3.daumcdn.net/tistory/4706624/skin/images/html-5.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -412,7 +453,7 @@
   .js {
     width: 100px;
     height: 100px;
-    transform: translateX(2200px);
+    transform: translateX(120vw);
     background: url(https://tistory4.daumcdn.net/tistory/4706624/skin/images/javascript.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -421,7 +462,7 @@
   .node {
     width: 100px;
     height: 100px;
-    transform: translateX(2400px);
+    transform: translateX(130vw);
     background: url(https://tistory3.daumcdn.net/tistory/4706624/skin/images/nodejs.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -430,7 +471,7 @@
   .python {
     width: 100px;
     height: 100px;
-    transform: translateX(2600px);
+    transform: translateX(140vw);
     background: url(https://tistory2.daumcdn.net/tistory/4706624/skin/images/python.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -439,7 +480,7 @@
   .django {
     width: 100px;
     height: 100px;
-    transform: translateX(2800px);
+    transform: translateX(150vw);
     background: url(https://tistory3.daumcdn.net/tistory/4706624/skin/images/sass.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -448,7 +489,7 @@
   .vue {
     width: 100px;
     height: 100px;
-    transform: translateX(3000px);
+    transform: translateX(160vw);
     background: url(https://tistory2.daumcdn.net/tistory/4706624/skin/images/vue_icon_130791.png)
       no-repeat center center;
     background-size: 100% 100%;
@@ -457,7 +498,7 @@
   .react {
     width: 100px;
     height: 100px;
-    transform: translateX(3200px);
+    transform: translateX(170vw);
     background: url(https://tistory3.daumcdn.net/tistory/4706624/skin/images/atom.png)
       no-repeat center center;
     background-size: 100% 100%;
