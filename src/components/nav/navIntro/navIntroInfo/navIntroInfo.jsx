@@ -6,7 +6,7 @@ const NavIntroInfo = (props) => {
     <div className={styles.navInfo}>
       <div className={styles.thumb} ref={thumbRef}></div>
       <div className={styles.info}>
-        <h1>About me.</h1>
+        <h1>About me</h1>
       </div>
     </div>
   );
