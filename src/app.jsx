@@ -15,10 +15,9 @@ import Test from "./components/portfolio/test/test";
 import Arrow from "./components/common/arrow/arrow";
 import NestedLoading from "./components/common/nestedLoading/nestedLoading";
 import Nav from "./components/nav/nav";
-import MetaTags from "react-meta-tags";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { Helmet } from "react-helmet";
 gsap.registerPlugin(ScrollTrigger);
 // Service logic
 const submitEmail = new SumbitEmail();
@@ -54,7 +53,7 @@ function App() {
   return (
     <React.Fragment>
       <div className="wrapper">
-        <MetaTags>
+        <Helmet>
           <title>Frontend Developer Portfolio</title>
           <meta property="og:type" content="website" />
           <meta
@@ -74,7 +73,7 @@ function App() {
             name="naver-site-verification"
             content="350f0c43da62fb00e061102d3495c7dc7bb30900"
           />
-        </MetaTags>
+        </Helmet>
       </div>
       <Loading loading={loading} setLoading={setLoading} />
 
