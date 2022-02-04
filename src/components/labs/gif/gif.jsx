@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./gif.module.scss";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -8,7 +8,6 @@ import Spinner from "../../common/spinner/spinner";
 const Gif = ({ aboutCode, aboutCodeLoading }) => {
   const previewRef = useRef();
   const [forToggle, setForToggle] = useState(false);
-  const [test, setTest] = useState(true);
   const toggle = () => {
     if (!forToggle) {
       previewRef.current.style.transform = "translateX(0)";

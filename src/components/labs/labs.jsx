@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 import Folder from "./folder/folder";
 import Gif from "./gif/gif";
 import Code from "./code/code";
-import Tuto from "./tuto/tuto";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import { useLocation } from "react-router-dom";
 const Labs = ({ loading, getGithubFile }) => {
