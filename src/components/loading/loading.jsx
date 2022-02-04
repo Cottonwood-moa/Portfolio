@@ -31,17 +31,17 @@ const Loading = ({ loading, setLoading }) => {
   return (
     <>
       <div className={styles.loadingContainer} ref={loadingRef}>
-        <div className={styles.loadingImage} data-aos="fade-up"></div>
-        <div className={styles.progressBar} data-aos="fade-up">
+        <div className={styles.loadingImage}></div>
+        <div className={styles.progressBar}>
           <ProgressBar
             progress={percentage}
             radius={100}
             strokeWidth={20}
-            strokeColor="#1f1f1f"
+            strokeColor="pink"
             trackStrokeWidth={4}
             pointerRadius={8}
             pointerStrokeWidth={5}
-            pointerStrokeColor="#1f1f1f"
+            pointerStrokeColor="pink"
           ></ProgressBar>
         </div>
       </div>
