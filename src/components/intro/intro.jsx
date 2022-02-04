@@ -320,7 +320,7 @@ const Intro = ({ readMd }) => {
                 }}
               >
                 <span className={`${styles.text} textTrigger`}>
-                  What is my Skills?
+                  What skills do you have ?
                 </span>
               </Tween>
               <Tween
