@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+// CSS
 import styles from "./nav.module.scss";
+// PLUGIN
 import { Twirl as Hamburger } from "hamburger-react";
 import { useWindowSize } from "@react-hook/window-size/";
 import ReactTooltip from "react-tooltip";
-
+// COMPONENTS
 import NavIntro from "./navIntro/navIntro";
 import NavIntroInfo from "./navIntro/navIntroInfo/navIntroInfo";
 import NavLabs from "./navLabs/navLabs";

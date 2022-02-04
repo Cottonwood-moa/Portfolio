@@ -21,14 +21,16 @@ import lifemarker from "../common/images/lifemarker.png";
 import portfolio from "../common/images/portfolio.png";
 
 const Portfolio = ({ setNestLoading }) => {
+  // useLocation
   const location = useLocation();
+  // getYear
   const now = new Date();
   const year = now.getFullYear();
-  const portfolioContainerRef = useRef();
   // useState
   const [progress, setProgress] = useState(false);
   // useRef
   const pageMoveRef = useRef();
+  const portfolioContainerRef = useRef();
   // useEffect
   useEffect(() => {
     if (!location.pathname.includes("portfolio")) {

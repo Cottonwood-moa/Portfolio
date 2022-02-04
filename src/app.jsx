@@ -15,6 +15,7 @@ import Test from "./components/portfolio/test/test";
 import Arrow from "./components/common/arrow/arrow";
 import NestedLoading from "./components/common/nestedLoading/nestedLoading";
 import Nav from "./components/nav/nav";
+// GSAP
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Helmet } from "react-helmet";
@@ -24,18 +25,22 @@ const submitEmail = new SumbitEmail();
 const readMd = new ReadMd();
 const getGithubFile = new GetGithubFile();
 function App() {
+  // useLocation
   const location = useLocation();
+  // useState
   // eslint-disable-next-line no-unused-vars
   const [transitionName, setTransitionName] = useState("alert");
   const [loading, setLoading] = useState(true);
   const [forNav, setforNav] = useState(true);
   const [nestLoading, setNestLoading] = useState(false);
+  // useRef
   const navRefs = useRef([]);
-
+  // function
   const getNavRefs = (profileRef, hamburgerRef) => {
     navRefs.current[0] = profileRef;
     navRefs.current[1] = hamburgerRef;
   };
+  // useEffect
   useEffect(() => {
     if (location.pathname.includes("/portfolio/")) {
       setNestLoading(true);
@@ -46,10 +51,9 @@ function App() {
       setforNav(false);
       setforNav(true);
     }, 1600);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
-  useEffect(() => {}, [forNav]);
+  // content
   return (
     <React.Fragment>
       <div className="wrapper">

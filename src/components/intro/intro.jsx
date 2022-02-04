@@ -1,18 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+// COMPONENTS
+import PageLoadBar from "../pageLoadBar/pageLoadBar";
+// CSS
 import styles from "./intro.module.scss";
 import { Container } from "react-bootstrap";
-import ReactTooltip from "react-tooltip";
-import { useLocation } from "react-router-dom";
-import PageLoadBar from "../pageLoadBar/pageLoadBar";
+// CUSTOM HOOKS
 import { useWindowSize } from "@react-hook/window-size/";
+// ICON
 import { FaAngleDoubleDown } from "react-icons/fa";
+// GSAP
+import ReactTooltip from "react-tooltip";
 import { Tween, Timeline, SplitChars } from "react-gsap";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
+// GSAP PLUGIN IMPORT
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
+
 const Intro = ({ readMd }) => {
   // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
@@ -38,6 +45,7 @@ const Intro = ({ readMd }) => {
       item.style.opacity = "0";
     });
   };
+  // useEffect
   useEffect(() => {
     if (widthD < 924) {
       setFollow(false);
@@ -51,6 +59,7 @@ const Intro = ({ readMd }) => {
       anotherPage();
     }
   }, [location.pathname]);
+  // content
   return (
     <>
       <div className={`${styles.forRouteTransition} introScroller`}>
