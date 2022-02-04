@@ -64,7 +64,7 @@ function App() {
           <meta
             property="og:description"
             content="박건우 웹 프론트엔드 개인 포트폴리오 입니다. 
-          Personal Web Developer Portfolio. 
+          Park GeonWoo. Personal Web Developer Portfolio. 
           웹 포트폴리오에서 웹 프로젝트와 코드를 살펴보세요. 
           Check out my articles at this Web Portfolio."
           />
