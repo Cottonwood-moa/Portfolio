@@ -23,7 +23,7 @@ const NavIntro = ({ navigate, setIntroInfo, navRef, infoRef, setOpen }) => {
             navigate("/");
           }}
         >
-          <p className={`${styles.text}`}>Intro</p>
+          <p className={`${styles.text}`}>About</p>
         </div>
       </div>
     </>

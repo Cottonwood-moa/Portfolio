@@ -18,25 +18,17 @@
     no-repeat center center;
   background-size: 101% 101%;
   transition: 0.4s;
-  transform: translateY(2em);
-  opacity: 0;
 }
 .title {
   color: $basicText;
-  font-weight: bold;
   margin-top: 1em;
   transition: 0.4s 0.2s;
-  transform: translateY(2em);
-  opacity: 0;
 }
 .text {
   width: 25em;
   color: $basicText;
   font-size: 18px;
-  font-weight: bold;
   transition: 0.8s 0.8s;
-  transform: translateY(10em);
-  opacity: 0;
 }
 .tags {
   display: flex;

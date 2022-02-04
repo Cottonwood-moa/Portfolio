@@ -22,7 +22,6 @@
 }
 .typing {
   font-size: 48px;
-  font-weight: bold;
   color: $basicText;
   border-right: 0.1em solid $background;
   width: 11ch;
@@ -30,4 +29,5 @@
   overflow: hidden;
   animation: typing 1s steps(11, end),
     blink-caret 0.5s step-end infinite alternate;
+  text-align: center;
 }
