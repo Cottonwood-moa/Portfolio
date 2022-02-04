@@ -27,7 +27,7 @@ const Arrow = ({ location }) => {
       back: "portfolio/characterTest",
     },
     "/portfolio/CardMaker": {
-      next: "portfolio/LifeMarker",
+      next: "portfolio/imdbMovieApp",
       back: "portfolio/webPortfolio",
     },
     "/portfolio/imdbMovieApp": {
