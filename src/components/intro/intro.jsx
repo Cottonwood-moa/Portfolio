@@ -126,10 +126,10 @@ const Intro = ({ readMd }) => {
             >
               <h1>Hello, my name is Geonwoo Park.</h1>
               <div>
-                I am front-end web developer and UI/UX javascript specialist.
+                I am front-end web developer and confident in UI/UX javascript.
               </div>
               <div>
-                Check out my articles, React and React Native UI components at
+                Check out my articles, HTML+CSS+JS and React Vue components at
                 the
                 <ReactTooltip id="labsTip" type="error" effect="float">
                   Go to Code laboratory
