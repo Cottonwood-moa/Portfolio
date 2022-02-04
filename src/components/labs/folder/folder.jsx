@@ -329,14 +329,6 @@ const Folder = ({
               <FaAngleRight />
               react-scss
             </div>
-            <div className={styles.article}>
-              <FaAngleRight />
-              React 5
-            </div>
-            <div className={styles.article}>
-              <FaAngleRight />
-              React 6
-            </div>
           </>
         )}
       </div>
