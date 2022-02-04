@@ -70,6 +70,10 @@ function App() {
           Check out my articles at this Web Portfolio."
           />
           <meta property="og:image" content="/images/react.png" />
+          <meta
+            name="naver-site-verification"
+            content="350f0c43da62fb00e061102d3495c7dc7bb30900"
+          />
         </MetaTags>
       </div>
       <Loading loading={loading} setLoading={setLoading} />
