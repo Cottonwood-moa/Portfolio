@@ -5,7 +5,6 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./portfolio.module.scss";
 import { Container } from "react-bootstrap";
 // PLUG IN
-import MetaTags from "react-meta-tags";
 // COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import Card from "./card/card";
@@ -45,13 +44,6 @@ const Portfolio = ({ setNestLoading }) => {
   };
   return (
     <>
-      <div className="wrapper">
-        <MetaTags>
-          <title>Portfolio</title>
-          <meta name="description" content="About Me Component" />
-          <meta property="og:title" content="MyApp" />
-        </MetaTags>
-      </div>
       <div className={styles.portfolioContainer} ref={portfolioContainerRef}>
         {progress && <PageLoadBar />}
         <Container ref={pageMoveRef} className={styles.bootContainer}>
