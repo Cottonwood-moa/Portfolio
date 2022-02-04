@@ -299,9 +299,15 @@ const Folder = ({
               <FaAngleRight />
               react-markdown
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              ref={(r) => (chosenRef.current[18] = r)}
+              onClick={() => {
+                getFile("react-progressbar", 18);
+              }}
+            >
               <FaAngleRight />
-              React 2
+              react-progressbar
             </div>
             <div className={styles.article}>
               <FaAngleRight />
