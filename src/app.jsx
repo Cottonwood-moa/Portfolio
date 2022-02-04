@@ -15,6 +15,7 @@ import Test from "./components/portfolio/test/test";
 import Arrow from "./components/common/arrow/arrow";
 import NestedLoading from "./components/common/nestedLoading/nestedLoading";
 import Nav from "./components/nav/nav";
+import MetaTags from "react-meta-tags";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -37,9 +38,6 @@ function App() {
     navRefs.current[1] = hamburgerRef;
   };
   useEffect(() => {
-    // console.log("profile:", navRefs.current[0].current);
-    // console.log("hamburger:", navRefs.current[1].current);
-    // console.log(["location.pathname", location.pathname]);
     if (location.pathname.includes("/portfolio/")) {
       setNestLoading(true);
     }
@@ -55,6 +53,25 @@ function App() {
   useEffect(() => {}, [forNav]);
   return (
     <React.Fragment>
+      <div className="wrapper">
+        <MetaTags>
+          <title>Frontend Developer Portfolio</title>
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:site_name"
+            content="Frontend Developer Portfolio"
+          />
+          <meta property="og:title" content="Frontend Developer Portfolio" />
+          <meta
+            property="og:description"
+            content="박건우 웹 프론트엔드 개인 포트폴리오 입니다. 
+          Personal Web Developer Portfolio. 
+          웹 포트폴리오에서 웹 프로젝트와 코드를 살펴보세요. 
+          Check out my articles at this Web Portfolio."
+          />
+          <meta property="og:image" content="/images/react.png" />
+        </MetaTags>
+      </div>
       <Loading loading={loading} setLoading={setLoading} />
 
       <TransitionGroup>

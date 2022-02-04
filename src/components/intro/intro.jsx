@@ -7,8 +7,6 @@ import { useLocation } from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import { useWindowSize } from "@react-hook/window-size/";
 import { FaAngleDoubleDown } from "react-icons/fa";
-import MetaTags from "react-meta-tags";
-// import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline, SplitChars } from "react-gsap";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -55,30 +53,6 @@ const Intro = ({ readMd }) => {
   }, [location.pathname]);
   return (
     <>
-      <div className="wrapper">
-        <MetaTags>
-          <title>About Me</title>
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:site_name"
-            content="Frontend Developer Portfolio"
-          />
-          <meta property="og:title" content="Frontend Developer Portfolio" />
-          <meta
-            property="og:description"
-            content="박건우 웹 프론트엔드 개인 포트폴리오 입니다. 
-          Personal Web Developer Portfolio. 
-          웹 포트폴리오에서 웹 프로젝트와 코드를 살펴보세요. 
-          Check out my articles at this Web Portfolio."
-          />
-          <meta property="og:image" content="/images/react.png" />
-        </MetaTags>
-      </div>
-      {/* <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Starbucks" />
-  <meta property="og:title" content="Starbucks Coffee Korea" />
-  <meta property="og:description" content="스타벅스는 세계에서 가장 큰 다국적 커피 전문점으로, 64개국에서 총 23,187개의 매점을 운영하고 있습니다." />
-  <meta property="og:image" content="./images/starbucks_seo.jpg" /> */}
       <div className={`${styles.forRouteTransition} introScroller`}>
         <Tween
           from={{
