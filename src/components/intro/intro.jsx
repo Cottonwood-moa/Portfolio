@@ -6,11 +6,14 @@ import ReactTooltip from "react-tooltip";
 import { useLocation } from "react-router-dom";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import { useWindowSize } from "@react-hook/window-size/";
+import { FaAngleDoubleDown } from "react-icons/fa";
 // import { Controller, Scene } from "react-scrollmagic";
 import { Tween, Timeline, SplitChars } from "react-gsap";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 const Intro = ({ readMd }) => {
   // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
@@ -49,8 +52,7 @@ const Intro = ({ readMd }) => {
     }
   }, [location.pathname]);
   return (
-    <div className={styles.forRouteTransition}>
-      {/* <Nav getNavRefs={getNavRefs} /> */}
+    <div className={`${styles.forRouteTransition} introScroller`}>
       {progress && <PageLoadBar />}
       <div className={styles.introContainer}>
         <Container>
@@ -147,36 +149,259 @@ const Intro = ({ readMd }) => {
                 </span>
                 .
               </div>
-              <div className={styles.copyright}>
-                Copyrightⓒ{year} by Cottonwood(Geonwoo Park).
+              <div>
+                <Timeline
+                  repeat={-1}
+                  target={
+                    <div className={styles.bottomArrow}>
+                      <FaAngleDoubleDown />
+                    </div>
+                  }
+                >
+                  <Tween
+                    to={{
+                      y: "-10px",
+                    }}
+                    duration={2}
+                  />
+                  <Tween
+                    to={{
+                      y: "0px",
+                    }}
+                    duration={2}
+                  />
+                </Timeline>
               </div>
             </div>
           </div>
-          <div className={styles.secondSection}>
+          {/* ========================================================= */}
+          <div
+            className={styles.secondSection}
+            ref={(e) => (pageMoveRefs.current[3] = e)}
+          >
             <Tween
-              to={{
-                x: "400px",
-                y: "400px",
-                fontSize: 80,
+              from={{
+                x: "-1000px",
+                rotate: 360,
                 scrollTrigger: {
-                  trigger: ".square",
-                  start: "700px center",
-                  end: "900px center",
+                  // scroller: ".introScroller",
+                  trigger: ".doit",
+                  start: "-200px center",
+                  end: "200px center",
                   scrub: 0.5,
-                  markers: true,
                 },
               }}
               stagger={0.2}
               ease="elastic.out(0.2, 0.1)"
             >
               <SplitChars
-                wrapper={
-                  <div style={{ display: "inline-block", fontSize: "40px" }} />
-                }
+                wrapper={<div className={`${styles.splitText} doit`}></div>}
               >
-                This text gets splitted by chars.
+                Do It!
               </SplitChars>
             </Tween>
+            <Tween
+              from={{
+                x: "-100px",
+                y: "-100px",
+                fontSize: "0px",
+                scale: 0,
+                rotate: -180,
+                scrollTrigger: {
+                  // scroller: ".introScroller",
+                  trigger: ".boxTrigger",
+                  start: "-200px center",
+                  end: "1200px center",
+                  scrub: 0.5,
+                },
+              }}
+              stagger={0.2}
+              ease="elastic.out(0.2, 0.1)"
+            >
+              <div className={`${styles.box1} boxTrigger`}></div>
+              <div className={styles.box2}></div>
+              <div className={styles.box3}></div>
+              <div className={styles.box4}>
+                <div className={styles.man}></div>
+              </div>
+              <div className={styles.box5}></div>
+              <div className={styles.box6}></div>
+              <div className={styles.box7}></div>
+              <div className={styles.box8}></div>
+              <div className={styles.box9}></div>
+              <div className={styles.box10}></div>
+              <div className={styles.box9}></div>
+              <div className={styles.box8}></div>
+              <div className={styles.box7}>
+                <div className={styles.cat}></div>
+              </div>
+              <div className={styles.box6}></div>
+              <div className={styles.box5}></div>
+              <div className={styles.ground}></div>
+            </Tween>
+            <Tween
+              from={{
+                scale: 0,
+                rotate: -180,
+                scrollTrigger: {
+                  // scroller: ".introScroller",
+                  trigger: ".doDesign",
+                  start: "-200px center",
+                  end: "300px center",
+                  scrub: 0.5,
+                },
+              }}
+              stagger={0.2}
+              ease="elastic.out(0.2, 0.1)"
+            >
+              <div className={`${styles.des1} doDesign`}>
+                I do graphic design & code.
+              </div>
+            </Tween>
+            <Tween
+              from={{
+                // fontSize: "0px",
+                scale: 0,
+                rotate: -180,
+                scrollTrigger: {
+                  // scroller: ".introScroller",
+                  trigger: ".uiux",
+                  start: "-200px center",
+                  end: "300pxpx center",
+                  scrub: 0.5,
+                },
+              }}
+              stagger={0.2}
+              ease="elastic.out(0.2, 0.1)"
+            >
+              <div className={`${styles.des2} uiux`}>I do UI/UX, REST API</div>
+            </Tween>
+          </div>
+          <div
+            className={styles.thirdSectionFortransition}
+            ref={(e) => (pageMoveRefs.current[4] = e)}
+          >
+            <div
+              className={`${styles.thirdSection} thirdSectionContainerTrigger`}
+            >
+              <Tween
+                to={{
+                  text: "Here is my development loadmap!",
+                  scrollTrigger: {
+                    // scroller: ".introScroller",
+                    trigger: ".textTrigger",
+                    start: "400px center",
+                    end: "1000px center",
+                    scrub: 1,
+                  },
+                }}
+                duration={2}
+              >
+                <span className={`${styles.text} textTrigger`}>
+                  What is my Skills?
+                </span>
+              </Tween>
+              <Tween
+                to={{
+                  x: "-2800px",
+                  scrollTrigger: {
+                    // scroller: ".introScroller",
+                    start: "top top",
+                    end: "+=500%",
+                    trigger: ".thirdSectionContainerTrigger",
+                    pin: ".thirdSectionContainerTrigger",
+                    // pinType: "fixed",
+                    scrub: 1,
+                  },
+                }}
+              >
+                <div className={styles.square}>
+                  <Tween
+                    to={{
+                      x: "3800px",
+                      opacity: 1,
+                      scrollTrigger: {
+                        // scroller: ".introScroller",
+                        trigger: ".groundTrigger",
+                        start: "0px center",
+                        end: "5000px center",
+                        scrub: 1,
+                      },
+                    }}
+                  >
+                    <div className={styles.fixed}></div>
+                  </Tween>
+                  <div className={styles.html}></div>
+                  <div className={styles.js}></div>
+                  <div className={styles.node}></div>
+                  <div className={styles.python}></div>
+                  <div className={styles.django}></div>
+                  <div className={styles.vue}></div>
+                  <div className={styles.react}></div>
+                  <Tween
+                    from={{
+                      x: "-100px",
+                      y: "-100px",
+                      fontSize: "0px",
+                      opacity: 0,
+                      scale: 0,
+                      // rotate: 90,
+                      scrollTrigger: {
+                        // scroller: ".introScroller",
+                        trigger: ".groundTrigger",
+                        start: "-200px center",
+                        end: "4000px center",
+                        scrub: 1,
+                      },
+                    }}
+                    stagger={0.2}
+                    ease="elastic.out(0.2, 0.1)"
+                  >
+                    <div className={`${styles.box} groundTrigger`}></div>
+                    {Array.from(Array(20), (e, i) => {
+                      return (
+                        <div
+                          key={i}
+                          className={`${styles.box} ${styles.test + i}`}
+                        ></div>
+                      );
+                    })}
+                  </Tween>
+                </div>
+              </Tween>
+            </div>
+          </div>
+          <div
+            className={`${styles.fourthSection} fourthSectionTrigger`}
+            ref={(e) => (pageMoveRefs.current[5] = e)}
+          >
+            <div>
+              <Tween
+                from={{
+                  x: "2000px",
+                  y: "2000px",
+                  rotate: 360,
+                  scale: 0,
+                  fontSize: 0,
+                  scrollTrigger: {
+                    // scroller: ".introScroller",
+                    trigger: ".fourthSectionTrigger",
+                    start: "0px center",
+                    end: "400px center",
+                    scrub: 1,
+                  },
+                }}
+                stagger={0.2}
+                ease="elastic.out(0.2, 0.1)"
+              >
+                <SplitChars wrapper={<div className={`${styles.text}`}></div>}>
+                  Check&nbsp;my&nbsp;Portfolio&nbsp;page&nbsp;and&nbsp;Code&nbsp;laboratory!
+                </SplitChars>
+              </Tween>
+            </div>
+            <div className={styles.copyright}>
+              Copyrightⓒ{year} by Cottonwood(Geonwoo Park).
+            </div>
           </div>
         </Container>
       </div>
