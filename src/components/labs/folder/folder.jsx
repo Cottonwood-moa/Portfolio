@@ -297,7 +297,7 @@ const Folder = ({
               }}
             >
               <FaAngleRight />
-              React Basic Template
+              react-markdown
             </div>
             <div className={styles.article}>
               <FaAngleRight />

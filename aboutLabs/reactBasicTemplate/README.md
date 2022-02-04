@@ -1,8 +1,8 @@
-![portfolioInfo](https://user-images.githubusercontent.com/79053495/151191805-7286b0bb-4b0a-4325-b542-afca5993f917.gif)  
-# Business Card Maker 
+# [React] react-markdown
 
 ㅤ  
-[깃허브](https://github.com/Cottonwood-moa/Portfolio)  
-[Go to Website](https://movie-app-cottonwood.netlify.app/)
+[react-markdown](https://github.com/remarkjs/react-markdown)  
+[remark-gfm](https://github.com/remarkjs/remark-gfm)  
+[react-syntax-highlighter](https://github.com/react-syntax-highlighter/react-syntax-highlighter)
 
-React.js ++ 로 만든 Web Portfolio
+![image](https://user-images.githubusercontent.com/79053495/152570696-8fc8de5e-b137-4e74-b1ad-3c14f9271b67.png)

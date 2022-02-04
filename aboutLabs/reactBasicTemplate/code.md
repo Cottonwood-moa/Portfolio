@@ -1,105 +1,44 @@
 ```js
-import React, { useEffect } from "react";
-import styles from "./folder.module.scss";
-
-const Folder = ({ getGithubFile, setAboutCode, setforPackage, setforCode }) => {
-  const getFile = async (reactBasicTemplate) => {
-    const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
-    const forPackage = await getGithubFile.getPackage(reactBasicTemplate);
-    const forCode = await getGithubFile.getCode(reactBasicTemplate);
-    // const aboutCode = await getGithubFile.getAboutCode(reactBasicTemplate);
-    await setAboutCode(aboutCode);
-    await setforPackage(forPackage);
-    await setforCode(forCode);
-    console.log("get 실행");
-  };
+import React from "react";
+import styles from "./code.module.scss";
+import ReactMarkdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import remarkGfm from "remark-gfm";
+import Spinner from "../../common/spinner/spinner";
+const Code = ({ forCode, forCodeLoading }) => {
   return (
-    <div className={styles.folderContainer}>
-      <div className={styles.category}>
-        <div className={styles.article}>1</div>
-        <div className={styles.article}>2</div>
-        <div className={styles.article}>3</div>
-        <div className={styles.article}>4</div>
-        <div className={styles.article}>5</div>
-      </div>
-      <div className={styles.files}>
-        <div className={styles.filesHeader}>Header</div>
-        <div
-          className={styles.article}
-          onClick={() => {
-            getFile("reactBasicTemplate");
-          }}
-        >
-          1
+    <div className={styles.codeContainer}>
+      {forCodeLoading && (
+        <div className={styles.spinnerContainer}>
+          <Spinner />
         </div>
-        <div className={styles.article}>2</div>
-        <div className={styles.article}>3</div>
-        <div className={styles.article}>4</div>
-        <div className={styles.article}>5</div>
-        <div className={styles.article}>6</div>
-      </div>
+      )}
+      <ReactMarkdown
+        children={forCode}
+        remarkPlugins={[remarkGfm]}
+        components={{
+          code({ node, inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || "");
+            return !inline && match ? (
+              <SyntaxHighlighter
+                children={String(children).replace(/\n$/, "")}
+                style={vscDarkPlus}
+                language={match[1]}
+                PreTag="div"
+                {...props}
+              />
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      />
     </div>
   );
 };
 
-export default Folder;
-
+export default Code;
 ```
-```json
-{
-  "name": "template",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@react-hook/window-size": "^3.0.7",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "aos": "^3.0.0-beta.6",
-    "axios": "^0.25.0",
-    "bootstrap": "5.1.3",
-    "hamburger-react": "^2.4.1",
-    "keen-slider": "^6.6.3",
-    "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.1.1",
-    "react-customizable-progressbar": "^1.0.3",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-markdown": "^8.0.0",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.3",
-    "react-syntax-highlighter": "^15.4.5",
-    "react-tooltip": "^4.2.21",
-    "react-transition-group": "^4.4.2",
-    "remark-gfm": "^3.0.1",
-    "sass": "^1.48.0",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
-}
-```
-
