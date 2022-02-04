@@ -71,7 +71,7 @@ const Intro = ({ readMd }) => {
           웹 포트폴리오에서 웹 프로젝트와 코드를 살펴보세요. 
           Check out my articles at this Web Portfolio."
           />
-          <meta property="og:image" content="/images/show.gif" />
+          <meta property="og:image" content="/images/react.png" />
         </MetaTags>
       </div>
       {/* <meta property="og:type" content="website" />
