@@ -325,6 +325,16 @@ const Folder = ({
               <FaAngleRight />
               react-scss
             </div>
+            <div
+              className={styles.article}
+              ref={(r) => (chosenRef.current[21] = r)}
+              onClick={() => {
+                getFile("react-btn", 21);
+              }}
+            >
+              <FaAngleRight />
+              react-button
+            </div>
           </>
         )}
       </div>
