@@ -324,7 +324,7 @@ const Intro = ({ readMd }) => {
                         // scroller: ".introScroller",
                         trigger: ".groundTrigger",
                         start: "0px center",
-                        end: "5000px center",
+                        end: "4000px center",
                         scrub: 1,
                       },
                     }}
@@ -386,8 +386,8 @@ const Intro = ({ readMd }) => {
                   scrollTrigger: {
                     // scroller: ".introScroller",
                     trigger: ".fourthSectionTrigger",
-                    start: "0px center",
-                    end: "400px center",
+                    start: "-200px center",
+                    end: "200px center",
                     scrub: 1,
                   },
                 }}
