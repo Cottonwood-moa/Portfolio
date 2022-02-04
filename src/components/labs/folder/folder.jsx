@@ -153,10 +153,6 @@ const Folder = ({
               <FaAngleRight />
               alignCenter
             </div>
-            <div className={styles.article}>
-              <FaAngleRight />
-              HTML 6
-            </div>
           </>
         )}
         {forJs && (
