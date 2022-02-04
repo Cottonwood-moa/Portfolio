@@ -309,9 +309,15 @@ const Folder = ({
               <FaAngleRight />
               react-progressbar
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              ref={(r) => (chosenRef.current[19] = r)}
+              onClick={() => {
+                getFile("react-transition", 19);
+              }}
+            >
               <FaAngleRight />
-              React 3
+              react-transition-group
             </div>
             <div className={styles.article}>
               <FaAngleRight />
