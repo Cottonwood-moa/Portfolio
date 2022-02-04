@@ -319,9 +319,15 @@ const Folder = ({
               <FaAngleRight />
               react-transition-group
             </div>
-            <div className={styles.article}>
+            <div
+              className={styles.article}
+              ref={(r) => (chosenRef.current[20] = r)}
+              onClick={() => {
+                getFile("react-scss", 20);
+              }}
+            >
               <FaAngleRight />
-              React 4
+              react-scss
             </div>
             <div className={styles.article}>
               <FaAngleRight />
