@@ -163,10 +163,7 @@ const Intro = ({ readMd }) => {
               </div>
               <div className={styles.info}>
                 <h1>Hello, my name is Geonwoo Park.</h1>
-                <div>
-                  I am front-end web developer and confident in UI/UX
-                  javascript.
-                </div>
+                <div>I am front-end web developer.</div>
                 <div>
                   Check out my articles, HTML+CSS+JS and React Vue components at
                   the
