@@ -25,13 +25,16 @@ function Test({ readMd, file }) {
   };
   // useEffect
   useEffect(() => {
+    window.scrollTo(0, 0);
     mdRead();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (!location.pathname.includes("/portfolio/")) {
+      window.scrollTo(0, 0);
       setProgress(true);
-      mdRef2.current.style.transform = "translateY(-100%)";
+      mdRef2.current.style.transform = "translateY(100%)";
+      // mdRef2.current.style.opacity = "0";
       // fade-out-top
     }
   }, [location.pathname]);

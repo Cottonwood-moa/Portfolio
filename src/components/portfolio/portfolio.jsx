@@ -37,8 +37,12 @@ const Portfolio = ({ setNestLoading }) => {
       anotherPage();
     }
   }, [location.pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // function
   const anotherPage = () => {
+    window.scrollTo(0, 0);
     setProgress(true);
     pageMoveRef.current.style.transition = "0.4s 1.2s";
     pageMoveRef.current.style.opacity = "0";
