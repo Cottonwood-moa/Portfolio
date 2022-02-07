@@ -1,0 +1,15 @@
+@import "../../common/main.scss";
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.8s 0.8s;
+  h1 {
+    font-size: 64px;
+    color: $chosenText;
+  }
+}

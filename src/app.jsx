@@ -3,6 +3,7 @@ import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./app.scss";
 // COMPONENTS
+import NotFound from "./components/notFound/notFound";
 import Intro from "./components/intro/intro";
 import Portfolio from "./components/portfolio/portfolio";
 import Labs from "./components/labs/labs";
@@ -42,6 +43,8 @@ function App() {
   };
   // useEffect
   useEffect(() => {
+    console.log("location.pathname", location);
+
     if (location.pathname.includes("/portfolio/")) {
       setNestLoading(true);
     }
@@ -144,11 +147,16 @@ function App() {
               path="/contact"
               element={<Contact loading={loading} submitEmail={submitEmail} />}
             />
-            <Route path="*" element={<Test />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
-      <Arrow location={location.pathname} />
+      {(location.pathname === "/" ||
+        location.pathname === "/contact" ||
+        location.pathname === "/labs" ||
+        location.pathname.includes("/portfolio")) && (
+        <Arrow location={location.pathname} />
+      )}
       {forNav && <Nav getNavRefs={getNavRefs} />}
       {nestLoading && (
         <NestedLoading
