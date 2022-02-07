@@ -56,9 +56,9 @@ const Portfolio = ({ setNestLoading }) => {
           <div className={styles.container}>
             <h1 className={styles.title}>web developer portfolio</h1>
             <span className={styles.subTitle}>
-              From Web Components and UI/UX animations to React.JS, Redux,
-              Vue.JS, and Node.JS. Check out my latest web software development
-              portfolio projects.
+              From Web Components and UI/UX animations to Javascript, Vue.JS and
+              React.JS. Check out my latest web software development portfolio
+              projects.
             </span>
             <div className={styles.cardWrap}>
               <Link to="webPortfolio">
