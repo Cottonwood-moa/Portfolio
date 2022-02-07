@@ -58,6 +58,7 @@ function App() {
     <React.Fragment>
       <div className="wrapper">
         <Helmet>
+          <html lang="ko" />
           <title>Frontend Developer Portfolio</title>
           <meta property="og:type" content="website" />
           <meta
