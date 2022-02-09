@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // COMPONENTS
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 // CSS
@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
 
 const Intro = ({ readMd }) => {
+  const navigate = useNavigate();
   // eslint-disable-next-line no-unused-vars
   const [widthD, heightD] = useWindowSize();
   // date
@@ -170,7 +171,12 @@ const Intro = ({ readMd }) => {
                   <ReactTooltip id="labsTip" type="error" effect="float">
                     Go to Code laboratory
                   </ReactTooltip>
-                  <span className={styles.link} data-tip data-for="labsTip">
+                  <span
+                    className={styles.link}
+                    data-tip
+                    data-for="labsTip"
+                    onClick={() => navigate("/labs")}
+                  >
                     code laboratory
                   </span>
                   .
@@ -184,6 +190,7 @@ const Intro = ({ readMd }) => {
                     className={styles.link}
                     data-tip
                     data-for="portfolioTip"
+                    onClick={() => navigate("/portfolio")}
                   >
                     portfolio page
                   </span>
