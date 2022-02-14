@@ -22,9 +22,13 @@ const Arrow = ({ location }) => {
       next: "about",
       back: "labs",
     },
+    "/portfolio/nasa": {
+      next: "portfolio/webPortfolio",
+      back: "portfolio/characterTest",
+    },
     "/portfolio/webPortfolio": {
       next: "portfolio/CardMaker",
-      back: "portfolio/characterTest",
+      back: "portfolio/nasa",
     },
     "/portfolio/CardMaker": {
       next: "portfolio/imdbMovieApp",
@@ -59,7 +63,7 @@ const Arrow = ({ location }) => {
       back: "portfolio/moneygame",
     },
     "/portfolio/characterTest": {
-      next: "portfolio/CardMaker",
+      next: "portfolio/nasa",
       back: "portfolio/loverface",
     },
   });

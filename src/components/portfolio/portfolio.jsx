@@ -19,6 +19,7 @@ import charactertest from "../common/images/charactertest.png";
 import starbucks from "../common/images/starbucks.png";
 import lifemarker from "../common/images/lifemarker.png";
 import portfolio from "../common/images/portfolio.png";
+import nasa from "../common/images/nasa.png";
 
 const Portfolio = ({ setNestLoading }) => {
   // useLocation
@@ -60,6 +61,15 @@ const Portfolio = ({ setNestLoading }) => {
               React.JS. Check out my latest web software development portfolio
               projects.
             </span>
+            <div className={styles.cardWrap}>
+              <Link to="nasa">
+                <Card
+                  title={"NASA APP"}
+                  thumbnail={nasa}
+                  tags={["WebApp", "React.js", "Next.js", "SCSS"]}
+                />
+              </Link>
+            </div>
             <div className={styles.cardWrap}>
               <Link to="webPortfolio">
                 <Card
