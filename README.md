@@ -2,7 +2,7 @@
 
 ㅤ  
 [깃허브](https://github.com/Cottonwood-moa/Portfolio)  
-[Go to Website](https://infallible-jennings-68c633.netlify.app/)
+[Go to Website](https://parkgeonwoo-portfolio.netlify.app/)
 
 React.js ++ 로 만든 Web Portfolio
 ㅤ
