@@ -21,7 +21,7 @@ function Test({ readMd, file }) {
   // get file.md -> use github api
   const mdRead = async () => {
     const res = await readMd.readGithubMd(file);
-    await setMdFile(res);
+    setMdFile(res);
   };
   // useEffect
   useEffect(() => {

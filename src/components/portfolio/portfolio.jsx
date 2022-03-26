@@ -20,6 +20,7 @@ import starbucks from "../common/images/starbucks.png";
 import lifemarker from "../common/images/lifemarker.png";
 import portfolio from "../common/images/portfolio.png";
 import nasa from "../common/images/nasa.png";
+import coinpaprika from "../common/images/coinpaprika.png";
 
 const Portfolio = ({ setNestLoading }) => {
   // useLocation
@@ -62,6 +63,19 @@ const Portfolio = ({ setNestLoading }) => {
               projects.
             </span>
             <div className={styles.cardWrap}>
+              <Link to="coinpaprika">
+                <Card
+                  title={"coinpaprika"}
+                  thumbnail={coinpaprika}
+                  tags={[
+                    "WebApp",
+                    "React.js",
+                    "Typescript",
+                    "ApexChart",
+                    "Recoil",
+                  ]}
+                />
+              </Link>
               <Link to="nasa">
                 <Card
                   title={"NASA APP"}

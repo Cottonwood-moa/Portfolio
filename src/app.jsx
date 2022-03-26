@@ -99,6 +99,10 @@ function App() {
                 element={<Portfolio setNestLoading={setNestLoading} />}
               ></Route>
               <Route
+                path="coinpaprika"
+                element={<Test readMd={readMd} file={"Coinpaprika"} />}
+              ></Route>
+              <Route
                 path="nasa"
                 element={<Test readMd={readMd} file={"nasa_app"} />}
               ></Route>

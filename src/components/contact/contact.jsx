@@ -154,7 +154,8 @@ const Contact = ({ submitEmail, loading }) => {
                     type="text"
                     className={styles.email}
                     ref={nameRef}
-                    autoComplete="off"
+                    autoComplet
+                    e="off"
                     name="name"
                     maxLength="20"
                     onFocus={labelUp}
