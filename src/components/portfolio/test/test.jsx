@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 // CSS
 import styles from "./test.module.scss";
 import { Container } from "react-bootstrap";
@@ -7,7 +8,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
-import { useLocation } from "react-router-dom";
+// COMPONENTS
 import PageLoadBar from "../../pageLoadBar/pageLoadBar";
 
 function Test({ readMd, file }) {

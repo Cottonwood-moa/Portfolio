@@ -21,7 +21,7 @@ import lifemarker from "../common/images/lifemarker.png";
 import portfolio from "../common/images/portfolio.png";
 import nasa from "../common/images/nasa.png";
 import coinpaprika from "../common/images/coinpaprika.png";
-
+import framerMotion from "../common/images/framerMotion.png";
 const Portfolio = ({ setNestLoading }) => {
   // useLocation
   const location = useLocation();
@@ -63,6 +63,13 @@ const Portfolio = ({ setNestLoading }) => {
               projects.
             </span>
             <div className={styles.cardWrap}>
+              <Link to="framerMotion">
+                <Card
+                  title={"framerMotion"}
+                  thumbnail={framerMotion}
+                  tags={["WebApp", "React.js", "Typescript", "Framer-Motion"]}
+                />
+              </Link>
               <Link to="coinpaprika">
                 <Card
                   title={"coinpaprika"}
