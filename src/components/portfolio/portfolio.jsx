@@ -78,6 +78,8 @@ const Portfolio = ({ setNestLoading }) => {
                     "Toast UI editor",
                     "prisma",
                     "planetScale",
+                    "recoil",
+                    "tailwind CSS",
                   ]}
                 />
               </Link>
@@ -87,10 +89,12 @@ const Portfolio = ({ setNestLoading }) => {
                   thumbnail={market}
                   tags={[
                     "WebApp",
-                    "React.js",
-                    "Typescript",
+                    "Next.js",
+                    "planet scale",
                     "ApexChart",
                     "Recoil",
+                    "prisma",
+                    "tailwind CSS",
                   ]}
                 />
               </Link>
