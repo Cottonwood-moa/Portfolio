@@ -99,6 +99,14 @@ function App() {
                 element={<Portfolio setNestLoading={setNestLoading} />}
               ></Route>
               <Route
+                path="modu"
+                element={<Test readMd={readMd} file={"modu"} />}
+              ></Route>
+              <Route
+                path="market"
+                element={<Test readMd={readMd} file={"market"} />}
+              ></Route>
+              <Route
                 path="framerMotion"
                 element={<Test readMd={readMd} file={"Framer-Motion"} />}
               ></Route>

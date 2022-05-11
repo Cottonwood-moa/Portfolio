@@ -22,6 +22,8 @@ import portfolio from "../common/images/portfolio.png";
 import nasa from "../common/images/nasa.png";
 import coinpaprika from "../common/images/coinpaprika.png";
 import framerMotion from "../common/images/framerMotion.png";
+import modu from "../common/images/modu.png";
+import market from "../common/images/market.png";
 const Portfolio = ({ setNestLoading }) => {
   // useLocation
   const location = useLocation();
@@ -62,6 +64,37 @@ const Portfolio = ({ setNestLoading }) => {
               React.JS. Check out my latest web software development portfolio
               projects.
             </span>
+            <div className={styles.cardWrap}>
+              <Link to="modu">
+                <Card
+                  title={"modu"}
+                  thumbnail={modu}
+                  tags={[
+                    "WebApp",
+                    "Next.js",
+                    "Typescript",
+                    "Framer-Motion",
+                    "Apex-Chart",
+                    "Toast UI editor",
+                    "prisma",
+                    "planetScale",
+                  ]}
+                />
+              </Link>
+              <Link to="market">
+                <Card
+                  title={"market"}
+                  thumbnail={market}
+                  tags={[
+                    "WebApp",
+                    "React.js",
+                    "Typescript",
+                    "ApexChart",
+                    "Recoil",
+                  ]}
+                />
+              </Link>
+            </div>
             <div className={styles.cardWrap}>
               <Link to="framerMotion">
                 <Card

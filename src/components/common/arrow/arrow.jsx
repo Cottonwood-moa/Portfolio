@@ -22,6 +22,14 @@ const Arrow = ({ location }) => {
       next: "about",
       back: "labs",
     },
+    "/portfolio/modu": {
+      next: "portfolio/market",
+      back: "portfolio/characterTest",
+    },
+    "/portfolio/market": {
+      next: "portfolio/framerMotion",
+      back: "portfolio/modu",
+    },
     "/portfolio/framerMotion": {
       next: "portfolio/coinpaprika",
       back: "portfolio/characterTest",
@@ -71,7 +79,7 @@ const Arrow = ({ location }) => {
       back: "portfolio/moneygame",
     },
     "/portfolio/characterTest": {
-      next: "portfolio/framerMotion",
+      next: "portfolio/modu",
       back: "portfolio/loverface",
     },
   });
