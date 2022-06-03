@@ -377,7 +377,6 @@ const Intro = ({ readMd }) => {
                     <div className={styles.js}></div>
                     <div className={styles.node}></div>
                     <div className={styles.python}></div>
-                    <div className={styles.django}></div>
                     <div className={styles.vue}></div>
                     <div className={styles.react}></div>
                     <Tween

@@ -14,7 +14,7 @@ const Card = ({ title, tags, thumbnail }) => {
       >
         <div className={styles.header}>
           <img
-            src="https://tistory2.daumcdn.net/tistory/4706624/skin/images/2.png"
+            src="https://media4.giphy.com/media/onTX2RFFFv3HXHDGuB/giphy.webp?cid=ecf05e476veyrd4bf1tspk8e9ctjxl5jtpxbc3hkm64mwks5&rid=giphy.webp&ct=s"
             alt="tree"
             className={styles.tree}
           />
