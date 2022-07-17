@@ -9,21 +9,21 @@ import { Container } from "react-bootstrap";
 import PageLoadBar from "../pageLoadBar/pageLoadBar";
 import Card from "./card/card";
 // IMAGE
-import cardMaker from "../common/images/cardmaker.png";
-import movie from "../common/images/movie.png";
-import beer from "../common/images/beer.png";
-import foodREC from "../common/images/foodREC.png";
-import moneygame from "../common/images/moneygame.png";
-import loverface from "../common/images/loverface.png";
-import charactertest from "../common/images/charactertest.png";
-import starbucks from "../common/images/starbucks.png";
-import lifemarker from "../common/images/lifemarker.png";
-import portfolio from "../common/images/portfolio.png";
-import nasa from "../common/images/nasa.png";
-import coinpaprika from "../common/images/coinpaprika.png";
-import framerMotion from "../common/images/framerMotion.png";
-import modu from "../common/images/modu.png";
-import market from "../common/images/market.png";
+// import cardMaker from "../common/images/cardmaker.png";
+// import movie from "../common/images/movie.png";
+// import beer from "../common/images/beer.png";
+// import foodREC from "../common/images/foodREC.png";
+// import moneygame from "../common/images/moneygame.png";
+// import loverface from "../common/images/loverface.png";
+// import charactertest from "../common/images/charactertest.png";
+// import starbucks from "../common/images/starbucks.png";
+// import lifemarker from "../common/images/lifemarker.png";
+// import portfolio from "../common/images/portfolio.png";
+// import nasa from "../common/images/nasa.png";
+// import coinpaprika from "../common/images/coinpaprika.png";
+// import framerMotion from "../common/images/framerMotion.png";
+// import modu from "../common/images/modu.png";
+// import market from "../common/images/market.png";
 const Portfolio = ({ setNestLoading }) => {
   // useLocation
   const location = useLocation();
