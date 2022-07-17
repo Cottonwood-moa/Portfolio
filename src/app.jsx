@@ -99,64 +99,84 @@ function App() {
                 element={<Portfolio setNestLoading={setNestLoading} />}
               ></Route>
               <Route
-                path="modu"
-                element={<Test readMd={readMd} file={"modu"} />}
+                path="SA-826"
+                element={<Test readMd={readMd} file={"SA-826"} />}
               ></Route>
               <Route
-                path="market"
-                element={<Test readMd={readMd} file={"market"} />}
+                path="SA-813"
+                element={<Test readMd={readMd} file={"SA-813"} />}
               ></Route>
               <Route
-                path="framerMotion"
-                element={<Test readMd={readMd} file={"Framer-Motion"} />}
+                path="SA-803"
+                element={<Test readMd={readMd} file={"SA-803"} />}
               ></Route>
               <Route
-                path="coinpaprika"
-                element={<Test readMd={readMd} file={"Coinpaprika"} />}
+                path="SA-789"
+                element={<Test readMd={readMd} file={"SA-789"} />}
               ></Route>
               <Route
-                path="nasa"
-                element={<Test readMd={readMd} file={"nasa_app"} />}
+                path="SA-788"
+                element={<Test readMd={readMd} file={"SA-788"} />}
               ></Route>
               <Route
-                path="webPortfolio"
-                element={<Test readMd={readMd} file={"Portfolio"} />}
+                path="SA-768"
+                element={<Test readMd={readMd} file={"SA-768"} />}
               ></Route>
               <Route
-                path="imdbMovieApp"
-                element={<Test readMd={readMd} file={"imdbMovieApp"} />}
+                path="SA-765"
+                element={<Test readMd={readMd} file={"SA-765"} />}
               ></Route>
               <Route
-                path="CardMaker"
-                element={<Test readMd={readMd} file={"CardMaker"} />}
+                path="SA-763"
+                element={<Test readMd={readMd} file={"SA-763"} />}
               ></Route>
               <Route
-                path="LifeMarker"
-                element={<Test readMd={readMd} file={"LifeMarker"} />}
+                path="SA-750"
+                element={<Test readMd={readMd} file={"SA-750"} />}
               ></Route>
               <Route
-                path="BEERCRAFT"
-                element={<Test readMd={readMd} file={"BEERCRAFT"} />}
+                path="SA-749"
+                element={<Test readMd={readMd} file={"SA-749"} />}
               ></Route>
               <Route
-                path="restaurant"
-                element={<Test readMd={readMd} file={"text-analysis-busan-"} />}
+                path="SA-736"
+                element={<Test readMd={readMd} file={"SA-736"} />}
               ></Route>
               <Route
-                path="Starbucks"
-                element={<Test readMd={readMd} file={"Starbucks"} />}
+                path="SA-735"
+                element={<Test readMd={readMd} file={"SA-735"} />}
               ></Route>
               <Route
-                path="moneygame"
-                element={<Test readMd={readMd} file={"moneygame"} />}
+                path="SA-721"
+                element={<Test readMd={readMd} file={"SA-721"} />}
               ></Route>
               <Route
-                path="loverface"
-                element={<Test readMd={readMd} file={"loverface"} />}
+                path="SA-706"
+                element={<Test readMd={readMd} file={"SA-706"} />}
               ></Route>
               <Route
-                path="characterTest"
-                element={<Test readMd={readMd} file={"characterTest"} />}
+                path="SA-653"
+                element={<Test readMd={readMd} file={"SA-653"} />}
+              ></Route>
+              <Route
+                path="SA-608"
+                element={<Test readMd={readMd} file={"SA-608"} />}
+              ></Route>
+              <Route
+                path="SA-603"
+                element={<Test readMd={readMd} file={"SA-603"} />}
+              ></Route>
+              <Route
+                path="SA-595"
+                element={<Test readMd={readMd} file={"SA-595"} />}
+              ></Route>
+              <Route
+                path="SA-574"
+                element={<Test readMd={readMd} file={"SA-574"} />}
+              ></Route>
+              <Route
+                path="SA-594"
+                element={<Test readMd={readMd} file={"SA-594"} />}
               ></Route>
             </Route>
             <Route

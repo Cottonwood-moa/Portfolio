@@ -11,8 +11,17 @@
   background-size: 24em 16em;
   .image {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    background-color: white;
+    color: black;
     width: 100%;
-    height: calc(100% - 2em);
+    padding: 20px;
+    text-align: center;
+    height: calc(100% - 1.8em);
   }
   .forHover {
     width: 100%;

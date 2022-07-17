@@ -13,5 +13,19 @@ class ReadMd {
       .catch((error) => console.log("error", error));
     return res;
   }
+
+  async getAiipMdFile(title) {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    const res = fetch(
+      `https://raw.githubusercontent.com/Cottonwood-moa/forMdFile/master/${title}.md`,
+      requestOptions
+    )
+      .then((response) => response.text())
+      .catch((error) => console.log("error", error));
+    return res;
+  }
 }
 export default ReadMd;
