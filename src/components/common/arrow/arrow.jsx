@@ -91,16 +91,16 @@ const Arrow = ({ location }) => {
       back: "portfolio/SA-608",
     },
     "/portfolio/SA-595": {
-      next: "portfolio/SA-574",
+      next: "portfolio/SA-594",
       back: "portfolio/SA-603",
     },
-    "/portfolio/SA-574": {
-      next: "portfolio/SA-594",
-      back: "portfolio/SA-595",
-    },
     "/portfolio/SA-594": {
-      next: "portfolio/SA-826",
+      next: "portfolio/SA-595",
       back: "portfolio/SA-574",
+    },
+    "/portfolio/SA-574": {
+      next: "portfolio/SA-826",
+      back: "portfolio/SA-594",
     },
   });
   // location name에 따라 전달해줄 go to "name" <- 여기 쓰일 이름 로직 필요

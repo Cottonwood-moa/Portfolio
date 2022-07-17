@@ -171,12 +171,12 @@ function App() {
                 element={<Test readMd={readMd} file={"SA-595"} />}
               ></Route>
               <Route
-                path="SA-574"
-                element={<Test readMd={readMd} file={"SA-574"} />}
-              ></Route>
-              <Route
                 path="SA-594"
                 element={<Test readMd={readMd} file={"SA-594"} />}
+              ></Route>
+              <Route
+                path="SA-574"
+                element={<Test readMd={readMd} file={"SA-574"} />}
               ></Route>
             </Route>
             <Route
