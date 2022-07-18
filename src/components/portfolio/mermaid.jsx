@@ -31,7 +31,7 @@ const WorkflowFlowchart = (props) => {
   const { graphData } = props;
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: "flex" }}>
       <WorkflowGraph chart={graphData} />
     </div>
   );
