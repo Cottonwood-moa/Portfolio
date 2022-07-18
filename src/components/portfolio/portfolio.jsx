@@ -190,11 +190,11 @@ const Portfolio = ({ setNestLoading }) => {
               </Link>
             </div>
             <div className={styles.cardWrap}>
-              <Link to="SA-595">
+              <Link to="SA-608">
                 <Card
-                  title={"SA-595"}
-                  thumbnail={"manualItem plot수정 팝업 변경하기"}
-                  tags={["SA-595"]}
+                  title={"SA-608"}
+                  thumbnail={"공개 범위 설정 추가 이슈 진행"}
+                  tags={["SA-608"]}
                 />
               </Link>
               <Link to="SA-603">
@@ -204,11 +204,11 @@ const Portfolio = ({ setNestLoading }) => {
                   tags={["SA-603"]}
                 />
               </Link>
-              <Link to="SA-608">
+              <Link to="SA-595">
                 <Card
-                  title={"SA-608"}
-                  thumbnail={"공개 범위 설정 추가 이슈 진행"}
-                  tags={["SA-608"]}
+                  title={"SA-595"}
+                  thumbnail={"manualItem plot수정 팝업 변경하기"}
+                  tags={["SA-595"]}
                 />
               </Link>
             </div>
