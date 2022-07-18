@@ -95,8 +95,8 @@ const Arrow = ({ location }) => {
       back: "portfolio/SA-603",
     },
     "/portfolio/SA-594": {
-      next: "portfolio/SA-595",
-      back: "portfolio/SA-574",
+      next: "portfolio/SA-574",
+      back: "portfolio/SA-595",
     },
     "/portfolio/SA-574": {
       next: "portfolio/SA-826",
